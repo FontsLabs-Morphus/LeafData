@@ -1,0 +1,91 @@
+{
+    "pipelineId": "5e75d575-335b-4632-b9c8-bb0582b9f26e",
+    "scheduleInterval": "Monthly",
+    "startDate": "12/09/2025",
+    "catchup": false,
+    "jobs": [
+        {
+            "id": "e065c24c-687f-40bb-9f1e-3cc50306a173",
+            "source": {
+                "sourceName": "Azure",
+                "sourceType": "AZUREBLOB",
+                "sourceProperties": {
+                    "taskId": "71cfda1c-47fe-4782-a632-1fc251dd981a",
+                    "connectionId": "bef36f6b-35fb-4ad2-96c7-fb078439e894",
+                    "tableName": "",
+                    "bucketName": "",
+                    "containerName": "filetransfer",
+                    "schemaName": "",
+                    "objectName": "New Folder/HeaderlessFile.csv",
+                    "customQuery": "",
+                    "path": null,
+                    "delimiter": null,
+                    "sourceJobType": null,
+                    "dataWriteMode": null,
+                    "headerlessFile": "yes",
+                    "headers": [
+                        "Column_1",
+                        "Column_2",
+                        "Column_3",
+                        "Column_4"
+                    ]
+                }
+            },
+            "destinations": [
+                {
+                    "destinationName": "InfodatMySQL",
+                    "destinationType": "MYSQL",
+                    "destinationProperties": {
+                        "taskId": "6775511e-19db-4969-af1a-1b4eb06babc9",
+                        "connectionId": "36259283-560e-4de2-8cc3-0d5b3a934891",
+                        "tableName": "ryTest",
+                        "bucketName": "",
+                        "containerName": "",
+                        "schemaName": "ryanTest",
+                        "objectName": "",
+                        "customQuery": null,
+                        "path": null,
+                        "delimiter": null,
+                        "sourceJobType": null,
+                        "dataWriteMode": "append",
+                        "headerlessFile": "no",
+                        "headers": [
+                            "Role",
+                            "Email",
+                            "DOB",
+                            "LastName",
+                            "FirstName",
+                            "ID"
+                        ]
+                    }
+                }
+            ],
+            "joinMetadata": [
+                {
+                    "joinMetadataTaskId": "fbcb38ad-f1ff-49e0-a6bb-041cd63c0812",
+                    "sourceMetadataId": "6ffca548-dd36-4309-a0c9-68b29d3ffb52",
+                    "destinationMetadataId": "81984cd4-9e0c-4c33-9ed6-5f5a6c028620",
+                    "sourceColumnName": "Column_1",
+                    "destinationColumnName": "FirstName",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "ea3c6b6e-4ab4-44f6-988c-accccf354a1a",
+                    "destinationTaskId": "6775511e-19db-4969-af1a-1b4eb06babc9",
+                    "sourceTaskId": "71cfda1c-47fe-4782-a632-1fc251dd981a",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "81984cd4-9e0c-4c33-9ed6-5f5a6c028620"
+                    }
+                }
+            ]
+        }
+    ],
+    "sequence": {
+        "e065c24c-687f-40bb-9f1e-3cc50306a173": []
+    },
+    "taskSequence": {
+        "71cfda1c-47fe-4782-a632-1fc251dd981a": [
+            "6775511e-19db-4969-af1a-1b4eb06babc9"
+        ]
+    }
+}

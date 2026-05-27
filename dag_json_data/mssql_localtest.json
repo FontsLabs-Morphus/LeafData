@@ -1,0 +1,200 @@
+{
+  "pipelineId": "mssql_test",
+  "scheduleInterval": "@once",
+  "startDate": "12/19/2025",
+  "catchup": false,
+  "jobs": [
+    {
+      "id": "3ea7cec0-c5b2-47ba-8538-7f62f39fa8ed",
+      "source": {
+        "sourceName": "SubraDB",
+        "sourceType": "MSSQL",
+        "sourceProperties": {
+          "taskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+          "connectionId": "mssql_connection",
+          "tableName": "2019_Nov",
+          "bucketName": null,
+          "containerName": null,
+          "schemaName": "dbo",
+          "objectName": null,
+          "customQuery": null,
+          "path": null,
+          "delimiter": null,
+          "sourceJobType": null,
+          "dataWriteMode": null,
+          "headerlessFile": "no",
+          "headers": [
+            "event_time",
+            "event_type",
+            "product_id",
+            "category_id",
+            "category_code",
+            "brand",
+            "price",
+            "user_id",
+            "user_session"
+          ]
+        }
+      },
+      "destinations": [
+        {
+          "destinationName": "fkjgfgfkjlgfkjlgfklnkjl",
+          "destinationType": "BIGQUERY",
+          "destinationProperties": {
+            "taskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+            "connectionId": "6f11d3fa-ed3c-4b31-96ba-f42183ede2af",
+            "tableName": "rohit_local_test_1",
+            "bucketName": null,
+            "containerName": null,
+            "schemaName": "SelltisDemo",
+            "objectName": null,
+            "customQuery": null,
+            "path": null,
+            "delimiter": null,
+            "sourceJobType": null,
+            "dataWriteMode": "overwrite",
+            "headerlessFile": "no",
+            "headers": [
+              "event_time",
+              "event_type",
+              "product_id",
+              "category_id",
+              "category_code",
+              "brand",
+              "price",
+              "user_id",
+              "user_session"
+            ]
+          }
+        }
+      ],
+      "joinMetadata": [
+        {
+          "joinMetadataTaskId": "jm-1",
+          "sourceMetadataId": "src-1",
+          "destinationMetadataId": "dst-1",
+          "sourceColumnName": "event_time",
+          "destinationColumnName": "event_time",
+          "teamID": null,
+          "tagID": null,
+          "sourceGroupId": "grp-1",
+          "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+          "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+          "transformations": { "ids": [], "parent": null }
+        },
+        {
+          "joinMetadataTaskId": "jm-2",
+          "sourceMetadataId": "src-2",
+          "destinationMetadataId": "dst-2",
+          "sourceColumnName": "event_type",
+          "destinationColumnName": "event_type",
+          "teamID": null,
+          "tagID": null,
+          "sourceGroupId": "grp-1",
+          "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+          "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+          "transformations": { "ids": [], "parent": null }
+        },
+        {
+          "joinMetadataTaskId": "jm-3",
+          "sourceMetadataId": "src-3",
+          "destinationMetadataId": "dst-3",
+          "sourceColumnName": "product_id",
+          "destinationColumnName": "product_id",
+          "teamID": null,
+          "tagID": null,
+          "sourceGroupId": "grp-1",
+          "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+          "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+          "transformations": { "ids": [], "parent": null }
+        },
+        {
+          "joinMetadataTaskId": "jm-4",
+          "sourceMetadataId": "src-4",
+          "destinationMetadataId": "dst-4",
+          "sourceColumnName": "category_id",
+          "destinationColumnName": "category_id",
+          "teamID": null,
+          "tagID": null,
+          "sourceGroupId": "grp-1",
+          "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+          "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+          "transformations": { "ids": [], "parent": null }
+        },
+        {
+          "joinMetadataTaskId": "jm-5",
+          "sourceMetadataId": "src-5",
+          "destinationMetadataId": "dst-5",
+          "sourceColumnName": "category_code",
+          "destinationColumnName": "category_code",
+          "teamID": null,
+          "tagID": null,
+          "sourceGroupId": "grp-1",
+          "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+          "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+          "transformations": { "ids": [], "parent": null }
+        },
+        {
+          "joinMetadataTaskId": "jm-6",
+          "sourceMetadataId": "src-6",
+          "destinationMetadataId": "dst-6",
+          "sourceColumnName": "brand",
+          "destinationColumnName": "brand",
+          "teamID": null,
+          "tagID": null,
+          "sourceGroupId": "grp-1",
+          "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+          "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+          "transformations": { "ids": [], "parent": null }
+        },
+        {
+          "joinMetadataTaskId": "jm-7",
+          "sourceMetadataId": "src-7",
+          "destinationMetadataId": "dst-7",
+          "sourceColumnName": "price",
+          "destinationColumnName": "price",
+          "teamID": null,
+          "tagID": null,
+          "sourceGroupId": "grp-1",
+          "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+          "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+          "transformations": { "ids": [], "parent": null }
+        },
+        {
+          "joinMetadataTaskId": "jm-8",
+          "sourceMetadataId": "src-8",
+          "destinationMetadataId": "dst-8",
+          "sourceColumnName": "user_id",
+          "destinationColumnName": "user_id",
+          "teamID": null,
+          "tagID": null,
+          "sourceGroupId": "grp-1",
+          "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+          "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+          "transformations": { "ids": [], "parent": null }
+        },
+        {
+          "joinMetadataTaskId": "jm-9",
+          "sourceMetadataId": "src-9",
+          "destinationMetadataId": "dst-9",
+          "sourceColumnName": "user_session",
+          "destinationColumnName": "user_session",
+          "teamID": null,
+          "tagID": null,
+          "sourceGroupId": "grp-1",
+          "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+          "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+          "transformations": { "ids": [], "parent": null }
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "3ea7cec0-c5b2-47ba-8538-7f62f39fa8ed": []
+  },
+  "taskSequence": {
+    "999041e4-e063-43f0-a585-0c2d134069ab": [
+      "8a7a66a6-9990-4514-a682-ca8a808bf4a9"
+    ]
+  }
+}

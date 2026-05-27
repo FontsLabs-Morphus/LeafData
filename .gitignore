@@ -1,0 +1,12 @@
+/vscode_workspace.code-workspace
+/.vscode/
+/.vs/
+/file_transformer_env/
+/.idea/
+/logs/
+/test/data/result
+**/__pycache__/
+.env
+airflow.db
+*.pyc
+transformed_files/

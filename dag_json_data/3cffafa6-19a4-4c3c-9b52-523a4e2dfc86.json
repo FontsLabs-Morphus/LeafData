@@ -1,0 +1,74 @@
+{
+  "pipelineId": "3cffafa6-19a4-4c3c-9b52-523a4e2dfc86",
+  "scheduleInterval": "@once",
+  "startDate": "03/24/2026",
+  "catchup": false,
+  "jobs": [
+    {
+      "id": "f75e6eff-cc07-4ae3-a6e8-d5a9ca3bc08a",
+      "source": {
+        "sourceName": "oracle_src",
+        "sourceType": "ORACLE",
+        "sourceProperties": {
+          "taskId": "c85e170f-928d-49e3-b108-52e5609775d2",
+          "connectionId": "oracle-3cffafa6",
+          "tableName": "books_demo",
+          "headerlessFile": "N",
+          "headers": [],
+          "bucketName": null,
+          "containerName": null,
+          "schemaName": "ORACLE_SRC",
+          "objectName": null,
+          "sourceJobType": "read",
+          "customQuery": null
+        }
+      },
+      "destinations": [
+        {
+          "destinationName": "oracle_dst",
+          "destinationType": "ORACLE",
+          "destinationProperties": {
+            "taskId": "dfdb64d5-2c0b-488d-b20c-d7a412c54c45",
+            "connectionId": "oracle-3cffafa6-dst",
+            "tableName": "books_demo_copy",
+            "headerlessFile": "N",
+            "headers": [],
+            "bucketName": null,
+            "containerName": null,
+            "schemaName": "ORACLE_DST",
+            "objectName": null,
+            "sourceJobType": "read",
+            "customQuery": null,
+            "dataWriteMode": "overwrite"
+          }
+        }
+      ],
+      "joinMetadata": [
+        {
+          "joinMetadataTaskId": "990fb270-9d94-4f34-996c-5c41967624e9",
+          "sourceMetadataId": "srcmeta-f75e6eff-cc07-4ae3-a6e8-d5a9ca3bc08a",
+          "destinationMetadataId": "dstmeta-dfdb64d5-2c0b-488d-b20c-d7a412c54c45",
+          "sourceColumnName": "ALL",
+          "destinationColumnName": "ALL",
+          "teamID": null,
+          "tagID": null,
+          "sourceGroupId": "d3efe0c6-5e5c-4098-98c8-9d496d46f568",
+          "destinationTaskId": "dfdb64d5-2c0b-488d-b20c-d7a412c54c45",
+          "sourceTaskId": "c85e170f-928d-49e3-b108-52e5609775d2",
+          "transformations": {
+            "ids": [],
+            "parent": null
+          }
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "f75e6eff-cc07-4ae3-a6e8-d5a9ca3bc08a": []
+  },
+  "taskSequence": {
+    "c85e170f-928d-49e3-b108-52e5609775d2": [
+      "dfdb64d5-2c0b-488d-b20c-d7a412c54c45"
+    ]
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "pipelineId": "4c27c438-5fb6-4549-8130-e62f8edeed5a",
+  "scheduleInterval": "@once",
+  "startDate": "05/06/2026",
+  "catchup": false,
+  "jobs": [
+    {
+      "id": "7ddd2ddb-c594-417b-b2ca-baf3f405d110",
+      "source": {
+        "sourceName": "sftp_src",
+        "sourceType": "SFTP",
+        "sourceProperties": {
+          "taskId": "d1d5a39a-1949-4458-9a8f-21371e2bae3a",
+          "connectionId": "sftp-4c27c438",
+          "tableName": null,
+          "bucketName": null,
+          "containerName": null,
+          "schemaName": null,
+          "objectName": null,
+          "sourceJobType": null,
+          "customQuery": null,
+          "path": "/upload/src_final_demo.csv",
+          "delimiter": ",",
+          "headerlessFile": "N",
+          "headers": [],
+          "dataWriteMode": "append"
+        }
+      },
+      "destinations": [
+        {
+          "destinationName": "mysql_dst",
+          "destinationType": "MYSQL",
+          "destinationProperties": {
+            "taskId": "10f8d924-716f-4192-84a4-6118f7993551",
+            "connectionId": "mysql-4c27c438-dst",
+            "tableName": "dst_final_demo",
+            "bucketName": null,
+            "containerName": null,
+            "schemaName": null,
+            "objectName": null,
+            "sourceJobType": null,
+            "customQuery": null,
+            "path": null,
+            "delimiter": null,
+            "headerlessFile": "N",
+            "headers": [],
+            "dataWriteMode": "append"
+          }
+        }
+      ],
+      "joinMetadata": [
+        {
+          "joinMetadataTaskId": "6edb4cda-3b12-4c7d-83c7-edd61eb10dfc",
+          "sourceMetadataId": "srcmeta-7ddd2ddb-c594-417b-b2ca-baf3f405d110",
+          "destinationMetadataId": "dstmeta-10f8d924-716f-4192-84a4-6118f7993551",
+          "sourceColumnName": "ALL",
+          "destinationColumnName": "ALL",
+          "teamID": null,
+          "tagID": null,
+          "sourceGroupId": "cd6238b6-0703-45f7-aace-2983122676bc",
+          "destinationTaskId": "10f8d924-716f-4192-84a4-6118f7993551",
+          "sourceTaskId": "d1d5a39a-1949-4458-9a8f-21371e2bae3a",
+          "transformations": {
+            "ids": [],
+            "parent": null
+          }
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "7ddd2ddb-c594-417b-b2ca-baf3f405d110": []
+  },
+  "taskSequence": {
+    "d1d5a39a-1949-4458-9a8f-21371e2bae3a": [
+      "10f8d924-716f-4192-84a4-6118f7993551"
+    ]
+  }
+}

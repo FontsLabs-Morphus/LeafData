@@ -1,0 +1,143 @@
+{
+  "pipelineId": "BqToAz",
+  "scheduleInterval": "@once",
+  "startDate": "02/05/2026",
+  "catchup": false,
+  "jobs": [
+    {
+      "id": "80c9bfc4-c919-4f7f-952b-ecbfd622cb0f",
+      "source": {
+        "sourceName": "RohitBQ",
+        "sourceType": "BIGQUERY",
+        "sourceProperties": {
+          "taskId": "6b5a25be-8eaa-49bf-b5b6-f24c0b3bc8b3",
+          "connectionId": "7b9f5bd8-a16c-43e4-99a0-fa40c2b4200c",
+          "tableName": "sampledata1",
+          "bucketName": "",
+          "containerName": "",
+          "schemaName": "firstBQ",
+          "objectName": "",
+          "customQuery": "",
+          "path": null,
+          "delimiter": null,
+          "sourceJobType": null,
+          "dataWriteMode": null,
+          "headerlessFile": "no",
+          "headers": [
+            "ID",
+            "FirstName",
+            "LastName",
+            "Age"
+          ]
+        }
+      },
+      "destinations": [
+        {
+          "destinationName": "InfoDat Azure",
+          "destinationType": "AZUREBLOB",
+          "destinationProperties": {
+            "taskId": "7cfe1dac-748d-4b60-b6d2-f2b79d88bc8d",
+            "connectionId": "fb2641e2-4ddb-4817-903c-fe3376fbda56",
+            "tableName": "",
+            "bucketName": "",
+            "containerName": "rohittest",
+            "schemaName": "",
+            "objectName": "SimpleFIle.csv",
+            "customQuery": null,
+            "path": null,
+            "delimiter": null,
+            "sourceJobType": null,
+            "dataWriteMode": "append",
+            "headerlessFile": "no",
+            "headers": [
+              "ID",
+              "FirstName",
+              "LastName",
+              "Age"
+            ]
+          }
+        }
+      ],
+      "joinMetadata": [
+        {
+          "joinMetadataTaskId": "208d95e8-6250-42fd-ba68-0587046c0d7c",
+          "sourceMetadataId": "413a3937-e670-4cc3-9538-da591ad1af22",
+          "destinationMetadataId": "13cbf5a7-cf80-4545-ad82-686681e37b05",
+          "sourceColumnName": "ID",
+          "destinationColumnName": "ID",
+          "teamID": "556a9916-514e-4194-b42b-7481318da237",
+          "tagID": null,
+          "sourceGroupId": "fbc4a545-e481-4114-92f8-5349b3528055",
+          "destinationTaskId": "7cfe1dac-748d-4b60-b6d2-f2b79d88bc8d",
+          "sourceTaskId": "6b5a25be-8eaa-49bf-b5b6-f24c0b3bc8b3",
+          "transformations": {
+            "ids": [],
+            "expression": null,
+            "parent": "13cbf5a7-cf80-4545-ad82-686681e37b05"
+          }
+        },
+        {
+          "joinMetadataTaskId": "af43e92b-4e6e-4306-a9fe-47ec328d474b",
+          "sourceMetadataId": "1d835af7-a603-4e0e-a23b-9ed38f164514",
+          "destinationMetadataId": "cd65ea3d-fc77-40f1-976d-c0e245a77693",
+          "sourceColumnName": "FirstName",
+          "destinationColumnName": "FirstName",
+          "teamID": "556a9916-514e-4194-b42b-7481318da237",
+          "tagID": "0589ed92-a5a3-45f5-851d-5a9436e442c9",
+          "sourceGroupId": "fbc4a545-e481-4114-92f8-5349b3528055",
+          "destinationTaskId": "7cfe1dac-748d-4b60-b6d2-f2b79d88bc8d",
+          "sourceTaskId": "6b5a25be-8eaa-49bf-b5b6-f24c0b3bc8b3",
+          "transformations": {
+            "ids": [
+              "DeidentificationFullName"
+            ],
+            "expression": null,
+            "parent": "cd65ea3d-fc77-40f1-976d-c0e245a77693"
+          }
+        },
+        {
+          "joinMetadataTaskId": "bf7b8938-23a8-43f6-a993-4f2e92c2ad46",
+          "sourceMetadataId": "e216e3be-9b60-425d-86ca-36fc6f0b7385",
+          "destinationMetadataId": "9728e414-4e2f-4ac7-8234-5b243f92f102",
+          "sourceColumnName": "LastName",
+          "destinationColumnName": "LastName",
+          "teamID": "556a9916-514e-4194-b42b-7481318da237",
+          "tagID": null,
+          "sourceGroupId": "fbc4a545-e481-4114-92f8-5349b3528055",
+          "destinationTaskId": "7cfe1dac-748d-4b60-b6d2-f2b79d88bc8d",
+          "sourceTaskId": "6b5a25be-8eaa-49bf-b5b6-f24c0b3bc8b3",
+          "transformations": {
+            "ids": [],
+            "expression": null,
+            "parent": "9728e414-4e2f-4ac7-8234-5b243f92f102"
+          }
+        },
+        {
+          "joinMetadataTaskId": "f7f07801-9438-4605-aa03-55a7328cad27",
+          "sourceMetadataId": "fbe57591-ed0f-47a6-888a-d29f8e96704b",
+          "destinationMetadataId": "e5f60228-413d-4924-a183-e5fb85752e88",
+          "sourceColumnName": "Age",
+          "destinationColumnName": "Age",
+          "teamID": "556a9916-514e-4194-b42b-7481318da237",
+          "tagID": null,
+          "sourceGroupId": "fbc4a545-e481-4114-92f8-5349b3528055",
+          "destinationTaskId": "7cfe1dac-748d-4b60-b6d2-f2b79d88bc8d",
+          "sourceTaskId": "6b5a25be-8eaa-49bf-b5b6-f24c0b3bc8b3",
+          "transformations": {
+            "ids": [],
+            "expression": null,
+            "parent": "e5f60228-413d-4924-a183-e5fb85752e88"
+          }
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "80c9bfc4-c919-4f7f-952b-ecbfd622cb0f": []
+  },
+  "taskSequence": {
+    "6b5a25be-8eaa-49bf-b5b6-f24c0b3bc8b3": [
+      "7cfe1dac-748d-4b60-b6d2-f2b79d88bc8d"
+    ]
+  }
+}

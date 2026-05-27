@@ -1,0 +1,73 @@
+{
+  "pipelineId": "cd1d5c97-3a69-4530-af67-916b2391afac",
+  "scheduleInterval": "@once",
+  "startDate": "03/24/2026",
+  "catchup": false,
+  "jobs": [
+    {
+      "id": "f2498d55-7ed2-49e7-8e09-feb1a0fa7b81",
+      "source": {
+        "sourceName": "oracle_src",
+        "sourceType": "ORACLE",
+        "sourceProperties": {
+          "taskId": "e7c984e9-a08d-49d5-8e27-5524bb375cdc",
+          "connectionId": "oracle-cd1d5c97",
+          "tableName": "courses_demo",
+          "headerlessFile": "N",
+          "headers": [],
+          "bucketName": null,
+          "containerName": null,
+          "schemaName": "ORACLE_SRC",
+          "objectName": null,
+          "sourceJobType": null,
+          "customQuery": null
+        }
+      },
+      "destinations": [
+        {
+          "destinationName": "oracle_dst",
+          "destinationType": "ORACLE",
+          "destinationProperties": {
+            "taskId": "32b5d288-5b2a-4e5d-be5e-369bb93df599",
+            "connectionId": "oracle-cd1d5c97-dst",
+            "tableName": "courses_demo_copy",
+            "headerlessFile": "N",
+            "headers": [],
+            "bucketName": null,
+            "containerName": null,
+            "schemaName": "ORACLE_DST",
+            "objectName": null,
+            "sourceJobType": null,
+            "customQuery": null
+          }
+        }
+      ],
+      "joinMetadata": [
+        {
+          "joinMetadataTaskId": "2223c1e5-7cce-4e92-bf5c-3548a474e5e0",
+          "sourceMetadataId": "srcmeta-f2498d55-7ed2-49e7-8e09-feb1a0fa7b81",
+          "destinationMetadataId": "dstmeta-32b5d288-5b2a-4e5d-be5e-369bb93df599",
+          "sourceColumnName": "ALL",
+          "destinationColumnName": "ALL",
+          "teamID": null,
+          "tagID": null,
+          "sourceGroupId": "b5447035-2265-4559-b934-ae28b0a4ed74",
+          "destinationTaskId": "32b5d288-5b2a-4e5d-be5e-369bb93df599",
+          "sourceTaskId": "e7c984e9-a08d-49d5-8e27-5524bb375cdc",
+          "transformations": {
+            "ids": [],
+            "parent": null
+          }
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "f2498d55-7ed2-49e7-8e09-feb1a0fa7b81": []
+  },
+  "taskSequence": {
+    "e7c984e9-a08d-49d5-8e27-5524bb375cdc": [
+      "32b5d288-5b2a-4e5d-be5e-369bb93df599"
+    ]
+  }
+}

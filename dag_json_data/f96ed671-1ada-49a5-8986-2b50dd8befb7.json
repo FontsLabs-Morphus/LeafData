@@ -1,0 +1,79 @@
+{
+  "pipelineId": "f96ed671-1ada-49a5-8986-2b50dd8befb7",
+  "scheduleInterval": "@once",
+  "startDate": "04/07/2026",
+  "catchup": false,
+  "jobs": [
+    {
+      "id": "4d6af626-7287-4412-88a4-0dc90c5cf664",
+      "source": {
+        "sourceName": "rest_api_src",
+        "sourceType": "REST_API",
+        "sourceProperties": {
+          "taskId": "5ab20d53-a32c-4a24-940f-1ddacc4515e8",
+          "connectionId": "rest_api-f96ed671",
+          "tableName": null,
+          "bucketName": null,
+          "containerName": null,
+          "schemaName": null,
+          "objectName": null,
+          "sourceJobType": null,
+          "customQuery": null,
+          "path": "/books",
+          "delimiter": null,
+          "headerlessFile": "N",
+          "headers": [],
+          "dataWriteMode": "append"
+        }
+      },
+      "destinations": [
+        {
+          "destinationName": "mysql_dst",
+          "destinationType": "MYSQL",
+          "destinationProperties": {
+            "taskId": "5bcec03f-72e5-4dcc-98d2-faa8cc9e9c2e",
+            "connectionId": "mysql-f96ed671-dst",
+            "tableName": "books_demo_copy",
+            "bucketName": null,
+            "containerName": null,
+            "schemaName": null,
+            "objectName": null,
+            "sourceJobType": null,
+            "customQuery": null,
+            "path": null,
+            "delimiter": null,
+            "headerlessFile": "N",
+            "headers": [],
+            "dataWriteMode": "append"
+          }
+        }
+      ],
+      "joinMetadata": [
+        {
+          "joinMetadataTaskId": "43546038-70bf-4294-946c-c8c9ae2b8fbe",
+          "sourceMetadataId": "srcmeta-4d6af626-7287-4412-88a4-0dc90c5cf664",
+          "destinationMetadataId": "dstmeta-5bcec03f-72e5-4dcc-98d2-faa8cc9e9c2e",
+          "sourceColumnName": "ALL",
+          "destinationColumnName": "ALL",
+          "teamID": null,
+          "tagID": null,
+          "sourceGroupId": "df679f6e-7c36-46a7-8ead-71b15513386f",
+          "destinationTaskId": "5bcec03f-72e5-4dcc-98d2-faa8cc9e9c2e",
+          "sourceTaskId": "5ab20d53-a32c-4a24-940f-1ddacc4515e8",
+          "transformations": {
+            "ids": [],
+            "parent": null
+          }
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "4d6af626-7287-4412-88a4-0dc90c5cf664": []
+  },
+  "taskSequence": {
+    "5ab20d53-a32c-4a24-940f-1ddacc4515e8": [
+      "5bcec03f-72e5-4dcc-98d2-faa8cc9e9c2e"
+    ]
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "pipelineId": "mysql_pipeline_1",
+  "scheduleInterval": "@once",
+  "startDate": "02/25/2026",
+  "catchup": false,
+  "jobs": [
+    {
+      "id": "job_mysql_1",
+      "source": {
+        "sourceName": "mysql_src",
+        "sourceType": "MYSQL",
+        "sourceProperties": {
+          "taskId": "task_mysql_src_1",
+          "connectionId": "mysql_src_test_1",
+          "tableName": "sample_table",
+          "bucketName": null,
+          "containerName": null,
+          "schemaName": "file_transfer",
+          "objectName": null,
+          "customQuery": null,
+          "headerlessFile": false,
+          "headers": []
+        }
+      },
+      "destinations": [
+        {
+          "destinationName": "mysql_dest",
+          "destinationType": "MYSQL",
+          "destinationProperties": {
+            "taskId": "task_mysql_dest_1",
+            "connectionId": "mysql_dest_test_1",
+            "tableName": "sample_table_copy",
+            "dataWriteMode": "append",
+            "bucketName": null,
+            "containerName": null,
+            "schemaName": "file_transfer",
+            "objectName": null,
+            "customQuery": null,
+            "delimiter": null,
+            "headerlessFile": false,
+            "headers": []
+          }
+        }
+      ],
+      "joinMetadata": [
+        {
+          "joinMetadataTaskId": "jm_1",
+          "sourceMetadataId": "src_meta_1",
+          "destinationMetadataId": "dest_meta_1",
+          "sourceColumnName": "id",
+          "destinationColumnName": "id",
+          "sourceGroupId": "grp_1",
+          "destinationTaskId": "task_mysql_dest_1",
+          "sourceTaskId": "task_mysql_src_1",
+          "transformations": {
+            "ids": [],
+            "parent": "dest_meta_1"
+          }
+        },
+        {
+          "joinMetadataTaskId": "jm_2",
+          "sourceMetadataId": "src_meta_2",
+          "destinationMetadataId": "dest_meta_2",
+          "sourceColumnName": "name",
+          "destinationColumnName": "name",
+          "sourceGroupId": "grp_1",
+          "destinationTaskId": "task_mysql_dest_1",
+          "sourceTaskId": "task_mysql_src_1",
+          "transformations": {
+            "ids": [],
+            "parent": "dest_meta_2"
+          }
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "job_mysql_1": []
+  },
+  "taskSequence": {
+    "task_mysql_src_1": [
+      "task_mysql_dest_1"
+    ]
+  }
+}

@@ -1,0 +1,2101 @@
+{
+    "pipelineId": "selltis_dag_test_2",
+    "scheduleInterval": "@once",
+    "startDate": "12/19/2025",
+    "catchup": false,
+    "jobs": [
+        {
+            "id": "3ea7cec0-c5b2-47ba-8538-7f62f39fa8ed",
+            "source": {
+                "sourceName": "SubraDB",
+                "sourceType": "MSSQL",
+                "sourceProperties": {
+                    "taskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "connectionId": "5d3993c3-893d-4d85-82a3-b7a54c64fb8d",
+                    "tableName": "AC",
+                    "bucketName": "",
+                    "containerName": "",
+                    "schemaName": "dbo",
+                    "objectName": "",
+                    "customQuery": "",
+                    "path": null,
+                    "delimiter": null,
+                    "sourceJobType": null,
+                    "dataWriteMode": null,
+                    "headerlessFile": "no",
+                    "headers": [
+                        "GID_ID",
+                        "BI__ID",
+                        "SYS_Name",
+                        "DTT_StartTime",
+                        "TXT_Address",
+                        "FIL_Attachments",
+                        "CHK_Billable",
+                        "SR__BillableHours",
+                        "CHK_Billed",
+                        "DTT_BilledTime",
+                        "MMO_BillingNotes",
+                        "CUR_BillingRate",
+                        "CUR_BillingTotal",
+                        "CHK_Corr",
+                        "CHK_CorrReceived",
+                        "CHK_CorrSent",
+                        "DTT_CreationTime",
+                        "MLS_Currency",
+                        "CHK_DemoData",
+                        "LI__Duration",
+                        "EML_Email",
+                        "SR__ExchRate",
+                        "MMO_UnderSignature",
+                        "DTT_EndTime",
+                        "TEL_Fax",
+                        "CHK_Free",
+                        "MMO_History",
+                        "TXT_AboveSignature",
+                        "CHK_Lead",
+                        "MMO_Letter",
+                        "MMO_NextAction",
+                        "DTT_NextActionDate",
+                        "MMO_Notes",
+                        "CHK_ExtDevReview",
+                        "CHK_IncludeLetterhead",
+                        "MLS_Priority",
+                        "MLS_Purpose",
+                        "TXT_Subj",
+                        "CHK_Report",
+                        "MMO_SendData",
+                        "CHK_Sent",
+                        "CHK_Service",
+                        "CHK_ServiceExt",
+                        "TXT_Signature",
+                        "MLS_Status",
+                        "MLS_Type",
+                        "URL_URLs",
+                        "CHK_UseSignature",
+                        "TXT_ModBy",
+                        "DTT_ModTime",
+                        "MMO_ImportData",
+                        "MMO_Journal",
+                        "MMO_PalmData",
+                        "MMO_WPData",
+                        "TXT_WPID",
+                        "SI__ShareState",
+                        "CHK_Publish",
+                        "LI__Custom1",
+                        "DR__Custom1",
+                        "DTT_Custom1",
+                        "GID_CreatedBy_US",
+                        "GID_CreditedTo_US",
+                        "GID_Bill_CO",
+                        "GID_Template_DO",
+                        "GID_Related_EL",
+                        "GID_Related_LO",
+                        "GID_From_SO",
+                        "TXT_ImportID",
+                        "TXT_StartTimeYear",
+                        "SI__StartTimeMonth",
+                        "SI__StartTimeDay",
+                        "TXT_ExternalID",
+                        "TXT_ExternalSource",
+                        "TXT_ImpJobID",
+                        "TEL_Phone",
+                        "GID_Related_RS",
+                        "ADR_Attachments",
+                        "GID_RELATED_RP",
+                        "CHK_AUTOJOURNAL",
+                        "MLS_REGION",
+                        "MLS_WebLeadProductType",
+                        "GID_WEBLEADPRODUCTTYPE_PE",
+                        "TXT_SUBJECT",
+                        "GID_RELATED_PF",
+                        "GID_RELATED_PD",
+                        "Gid_TempCN",
+                        "Gid_JCIID",
+                        "GID_RELATED_BC",
+                        "GID_RELATED_BR",
+                        "TXT_Segment",
+                        "MLS_ICT",
+                        "CHK_ProactiveCall",
+                        "MLS_DYK",
+                        "MLS_rDYK",
+                        "MLS_Pivot",
+                        "CHK_PercentageofBusiness",
+                        "MLS_InternalRef",
+                        "MLS_ExternalRef",
+                        "CHK_HandWrittenNote",
+                        "CHK_SuccessOfTheWeek",
+                        "CUR_ExpectedValue",
+                        "SI__ICT",
+                        "SI__PROACTIVECALL",
+                        "SI__DYK",
+                        "SI__RDYK",
+                        "SI__PIVOT",
+                        "SI__PERCENTAGEOFBUSINESS",
+                        "SI__INTERNALREF",
+                        "SI__EXTERNALREF",
+                        "SI__HANDWRITTENNOTE",
+                        "SI__SUCCESSOFTHEWEEK",
+                        "SR__IgniteTotal",
+                        "MLS_PercentageOfBusiness",
+                        "SI__EXPECTEDVALUE"
+                    ]
+                }
+            },
+            "destinations": [
+                {
+                    "destinationName": "fkjgfgfkjlgfkjlgfklnkjl",
+                    "destinationType": "BIGQUERY",
+                    "destinationProperties": {
+                        "taskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                        "connectionId": "6f11d3fa-ed3c-4b31-96ba-f42183ede2af",
+                        "tableName": "AC_Demo",
+                        "bucketName": "",
+                        "containerName": "",
+                        "schemaName": "SelltisDemo",
+                        "objectName": "",
+                        "customQuery": null,
+                        "path": null,
+                        "delimiter": null,
+                        "sourceJobType": null,
+                        "dataWriteMode": "overwrite",
+                        "headerlessFile": "no",
+                        "headers": [
+                            "GID_ID",
+                            "BI__ID",
+                            "SYS_Name",
+                            "DTT_StartTime",
+                            "TXT_Address",
+                            "FIL_Attachments",
+                            "CHK_Billable",
+                            "SR__BillableHours",
+                            "CHK_Billed",
+                            "DTT_BilledTime",
+                            "MMO_BillingNotes",
+                            "CUR_BillingRate",
+                            "CUR_BillingTotal",
+                            "CHK_Corr",
+                            "CHK_CorrReceived",
+                            "CHK_CorrSent",
+                            "DTT_CreationTime",
+                            "MLS_Currency",
+                            "CHK_DemoData",
+                            "LI__Duration",
+                            "EML_Email",
+                            "SR__ExchRate",
+                            "MMO_UnderSignature",
+                            "DTT_EndTime",
+                            "TEL_Fax",
+                            "CHK_Free",
+                            "MMO_History",
+                            "TXT_AboveSignature",
+                            "CHK_Lead",
+                            "MMO_Letter",
+                            "MMO_NextAction",
+                            "DTT_NextActionDate",
+                            "MMO_Notes",
+                            "CHK_ExtDevReview",
+                            "CHK_IncludeLetterhead",
+                            "MLS_Priority",
+                            "MLS_Purpose",
+                            "TXT_Subj",
+                            "CHK_Report",
+                            "MMO_SendData",
+                            "CHK_Sent",
+                            "CHK_Service",
+                            "CHK_ServiceExt",
+                            "TXT_Signature",
+                            "MLS_Status",
+                            "MLS_Type",
+                            "URL_URLs",
+                            "CHK_UseSignature",
+                            "TXT_ModBy",
+                            "DTT_ModTime",
+                            "MMO_ImportData",
+                            "MMO_Journal",
+                            "MMO_PalmData",
+                            "MMO_WPData",
+                            "TXT_WPID",
+                            "SI__ShareState",
+                            "CHK_Publish",
+                            "LI__Custom1",
+                            "DR__Custom1",
+                            "DTT_Custom1",
+                            "GID_CreatedBy_US",
+                            "GID_CreditedTo_US",
+                            "GID_Bill_CO",
+                            "GID_Template_DO",
+                            "GID_Related_EL",
+                            "GID_Related_LO",
+                            "GID_From_SO",
+                            "TXT_ImportID",
+                            "TXT_StartTimeYear",
+                            "SI__StartTimeMonth",
+                            "SI__StartTimeDay",
+                            "TXT_ExternalID",
+                            "TXT_ExternalSource",
+                            "TXT_ImpJobID",
+                            "TEL_Phone",
+                            "GID_Related_RS",
+                            "ADR_Attachments",
+                            "GID_RELATED_RP",
+                            "CHK_AUTOJOURNAL",
+                            "MLS_REGION",
+                            "MLS_WebLeadProductType",
+                            "GID_WEBLEADPRODUCTTYPE_PE",
+                            "TXT_SUBJECT",
+                            "GID_RELATED_PF",
+                            "GID_RELATED_PD",
+                            "Gid_TempCN",
+                            "Gid_JCIID",
+                            "GID_RELATED_BC",
+                            "GID_RELATED_BR",
+                            "TXT_Segment",
+                            "MLS_ICT",
+                            "CHK_ProactiveCall",
+                            "MLS_DYK",
+                            "MLS_rDYK",
+                            "MLS_Pivot",
+                            "CHK_PercentageofBusiness",
+                            "MLS_InternalRef",
+                            "MLS_ExternalRef",
+                            "CHK_HandWrittenNote",
+                            "CHK_SuccessOfTheWeek",
+                            "CUR_ExpectedValue",
+                            "SI__ICT",
+                            "SI__PROACTIVECALL",
+                            "SI__DYK",
+                            "SI__RDYK",
+                            "SI__PIVOT",
+                            "SI__PERCENTAGEOFBUSINESS",
+                            "SI__INTERNALREF",
+                            "SI__EXTERNALREF",
+                            "SI__HANDWRITTENNOTE",
+                            "SI__SUCCESSOFTHEWEEK",
+                            "SR__IgniteTotal",
+                            "MLS_PercentageOfBusiness",
+                            "SI__EXPECTEDVALUE"
+                        ]
+                    }
+                }
+            ],
+            "joinMetadata": [
+                {
+                    "joinMetadataTaskId": "4bb8dc3a-e3dc-48a5-b121-73521e44dad1",
+                    "sourceMetadataId": "46d2bd55-3dea-4286-bd85-63801977f558",
+                    "destinationMetadataId": "d53201bd-4d8a-4cb9-b83c-8f8597927f17",
+                    "sourceColumnName": "GID_ID",
+                    "destinationColumnName": "GID_ID",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "d53201bd-4d8a-4cb9-b83c-8f8597927f17"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "9d7f0622-8e4f-45c2-8b80-17f5a414c887",
+                    "sourceMetadataId": "b63d08a6-e8e3-460e-b939-508e0dbf3248",
+                    "destinationMetadataId": "a5187808-d1b4-4767-aae4-0a87ce59b37c",
+                    "sourceColumnName": "BI__ID",
+                    "destinationColumnName": "BI__ID",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "a5187808-d1b4-4767-aae4-0a87ce59b37c"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "5f2606f3-a15e-4bec-a774-cad4b343e193",
+                    "sourceMetadataId": "2bdc9730-465a-4443-9296-667ff110f121",
+                    "destinationMetadataId": "3b928828-9910-473b-8128-4cdb4541c6c1",
+                    "sourceColumnName": "SYS_Name",
+                    "destinationColumnName": "SYS_Name",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "3b928828-9910-473b-8128-4cdb4541c6c1"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "523db66b-dd9e-4316-9d7a-cfbaa8164fff",
+                    "sourceMetadataId": "52b782d3-b6d2-494a-b533-16d042cf07b0",
+                    "destinationMetadataId": "82fb394e-caa6-4eee-b2a2-f97b4804f8d3",
+                    "sourceColumnName": "DTT_StartTime",
+                    "destinationColumnName": "DTT_StartTime",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "82fb394e-caa6-4eee-b2a2-f97b4804f8d3"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "7cd01b8a-2ae0-4ff1-accf-0804c24f082f",
+                    "sourceMetadataId": "12e396c4-7162-460d-8a1a-b449110549b8",
+                    "destinationMetadataId": "34a94bc1-92f7-4c35-8583-4b019f545175",
+                    "sourceColumnName": "TXT_Address",
+                    "destinationColumnName": "TXT_Address",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "34a94bc1-92f7-4c35-8583-4b019f545175"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "09baf02e-d171-4111-bf27-1ba3ce849a38",
+                    "sourceMetadataId": "cc95ab1d-5e80-42b1-99a0-e0e50d75e9f9",
+                    "destinationMetadataId": "76c286af-e0a3-4cf9-a164-39eda8a390ee",
+                    "sourceColumnName": "FIL_Attachments",
+                    "destinationColumnName": "FIL_Attachments",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "76c286af-e0a3-4cf9-a164-39eda8a390ee"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "0310058d-7ca3-4658-8334-7b89f3e35ca3",
+                    "sourceMetadataId": "7b449394-dce1-4d2b-923b-2b354fb00eb8",
+                    "destinationMetadataId": "bdf3c9aa-2aa1-4a91-b405-8f76d1ad4c78",
+                    "sourceColumnName": "CHK_Billable",
+                    "destinationColumnName": "CHK_Billable",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "bdf3c9aa-2aa1-4a91-b405-8f76d1ad4c78"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "87a3a952-c994-4661-9916-4803c357629d",
+                    "sourceMetadataId": "9630dacf-3978-4395-b825-f1c09ee90f91",
+                    "destinationMetadataId": "bc2cd9e4-2aaf-41f2-9d68-4e02cedcbcdb",
+                    "sourceColumnName": "SR__BillableHours",
+                    "destinationColumnName": "SR__BillableHours",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "bc2cd9e4-2aaf-41f2-9d68-4e02cedcbcdb"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "30d98065-5fc9-4248-a141-73ce1db3b06c",
+                    "sourceMetadataId": "00107143-13fb-4eae-a912-0c681f78ca9e",
+                    "destinationMetadataId": "0b4534c6-037c-4df5-9d8e-7c43390a8c83",
+                    "sourceColumnName": "CHK_Billed",
+                    "destinationColumnName": "CHK_Billed",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "0b4534c6-037c-4df5-9d8e-7c43390a8c83"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "ec0cf51d-6b74-4f07-8d2a-c78cc70ce949",
+                    "sourceMetadataId": "4e954c3c-787f-451e-9895-2c411a7996c9",
+                    "destinationMetadataId": "7d5e0fd0-e194-4084-a922-ab10288dec90",
+                    "sourceColumnName": "DTT_BilledTime",
+                    "destinationColumnName": "DTT_BilledTime",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "7d5e0fd0-e194-4084-a922-ab10288dec90"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "b7a9f4af-b46e-440b-b84d-b5c301259eed",
+                    "sourceMetadataId": "d05c54e6-3a1e-4e40-9876-be26ddd8472b",
+                    "destinationMetadataId": "51b51636-4b75-44ef-bb3c-3de3a9dfdbac",
+                    "sourceColumnName": "MMO_BillingNotes",
+                    "destinationColumnName": "MMO_BillingNotes",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "51b51636-4b75-44ef-bb3c-3de3a9dfdbac"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "a00e6ea1-a710-49f0-bac7-06a0a10f2a69",
+                    "sourceMetadataId": "bb433357-dfa8-4a44-9681-fca813e18dda",
+                    "destinationMetadataId": "6f7c36ab-0ddf-44f1-a8cf-f2f9275cb654",
+                    "sourceColumnName": "CUR_BillingRate",
+                    "destinationColumnName": "CUR_BillingRate",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "6f7c36ab-0ddf-44f1-a8cf-f2f9275cb654"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "8e199815-3167-4fb5-b6ea-4b1c6a161742",
+                    "sourceMetadataId": "b77987a3-648b-4fca-a4ef-810d0bd451a9",
+                    "destinationMetadataId": "07a77c8c-1dad-4a31-afb2-bd5a8e143a13",
+                    "sourceColumnName": "CUR_BillingTotal",
+                    "destinationColumnName": "CUR_BillingTotal",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "07a77c8c-1dad-4a31-afb2-bd5a8e143a13"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "8fa15ad5-fc5a-4f43-8af5-883e4bb972d8",
+                    "sourceMetadataId": "94cb4802-ca71-4ddc-a04b-29027df7eae0",
+                    "destinationMetadataId": "70c2c74b-fc2e-4f06-9a4f-adafa18941af",
+                    "sourceColumnName": "CHK_Corr",
+                    "destinationColumnName": "CHK_Corr",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "70c2c74b-fc2e-4f06-9a4f-adafa18941af"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "b9ffd18e-f009-4e71-b464-a580c3bbda24",
+                    "sourceMetadataId": "d1eb5f6e-17b3-4c7f-a60c-d3c802c79248",
+                    "destinationMetadataId": "cae3b497-6b90-46dd-a93b-1e2962222a05",
+                    "sourceColumnName": "CHK_CorrReceived",
+                    "destinationColumnName": "CHK_CorrReceived",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "cae3b497-6b90-46dd-a93b-1e2962222a05"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "fcf6b386-9742-4388-966c-7c42accb8631",
+                    "sourceMetadataId": "ce80ba0f-56b6-4e2f-b161-5aba92061b1a",
+                    "destinationMetadataId": "695b377f-a2c4-41b8-a665-4c7459e09223",
+                    "sourceColumnName": "CHK_CorrSent",
+                    "destinationColumnName": "CHK_CorrSent",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "695b377f-a2c4-41b8-a665-4c7459e09223"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "bdc28afd-a4be-43b5-9831-edd8eb528eba",
+                    "sourceMetadataId": "51f8fd87-23f6-455c-a3bd-f9b3af14ec29",
+                    "destinationMetadataId": "e602378d-38f5-4d3f-9e37-b64f7e07572c",
+                    "sourceColumnName": "DTT_CreationTime",
+                    "destinationColumnName": "DTT_CreationTime",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "e602378d-38f5-4d3f-9e37-b64f7e07572c"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "d3738cfa-e31a-4cc0-954e-9107a6728bb8",
+                    "sourceMetadataId": "1a896e5b-93f0-4dc7-b841-480b656cffdb",
+                    "destinationMetadataId": "ee1fb1f6-4a6a-4f60-a817-9a08c65291a0",
+                    "sourceColumnName": "MLS_Currency",
+                    "destinationColumnName": "MLS_Currency",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "ee1fb1f6-4a6a-4f60-a817-9a08c65291a0"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "c2e73ca2-d809-4431-94a2-6de3b93193f8",
+                    "sourceMetadataId": "33dc97d3-8b97-4c1f-ba05-c93a75b63e62",
+                    "destinationMetadataId": "74844528-136c-48e1-8311-3eb707b202ac",
+                    "sourceColumnName": "CHK_DemoData",
+                    "destinationColumnName": "CHK_DemoData",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "74844528-136c-48e1-8311-3eb707b202ac"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "e0b9fa70-7b72-4a4f-83c9-60ad40a520bd",
+                    "sourceMetadataId": "6ed21017-3eb5-4ba3-9d99-8b68108ca4f5",
+                    "destinationMetadataId": "9a843b0b-856c-4dc6-8df4-758fab1543e8",
+                    "sourceColumnName": "LI__Duration",
+                    "destinationColumnName": "LI__Duration",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "9a843b0b-856c-4dc6-8df4-758fab1543e8"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "a7548240-df85-4e44-953d-d5993a5b46c1",
+                    "sourceMetadataId": "d9f93266-cb41-452f-bee3-2ca7754f04e0",
+                    "destinationMetadataId": "8114c342-8413-400e-9b67-2465cfd6542d",
+                    "sourceColumnName": "EML_Email",
+                    "destinationColumnName": "EML_Email",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "8114c342-8413-400e-9b67-2465cfd6542d"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "311588e9-59f0-4568-ba4f-dfcaf86d8ee8",
+                    "sourceMetadataId": "082f2c55-463d-4962-a30d-9f01fb9f992f",
+                    "destinationMetadataId": "70fc32f6-fc59-425d-a427-bf76d49a657d",
+                    "sourceColumnName": "SR__ExchRate",
+                    "destinationColumnName": "SR__ExchRate",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "70fc32f6-fc59-425d-a427-bf76d49a657d"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "13875081-4a5d-4c2b-be2a-109cc0c6eda8",
+                    "sourceMetadataId": "83b2bd05-6fe8-41d0-9438-109585b94608",
+                    "destinationMetadataId": "d6f57d32-9649-43ab-95ad-8993c4d58c53",
+                    "sourceColumnName": "MMO_UnderSignature",
+                    "destinationColumnName": "MMO_UnderSignature",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "d6f57d32-9649-43ab-95ad-8993c4d58c53"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "2c6a3847-59ee-4fdd-9dd5-56d8bc3388c5",
+                    "sourceMetadataId": "06419e86-1408-4683-9927-6e5bdfe5490d",
+                    "destinationMetadataId": "0b5bbe1e-c2c5-4028-8544-77c7d344f4d1",
+                    "sourceColumnName": "DTT_EndTime",
+                    "destinationColumnName": "DTT_EndTime",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "0b5bbe1e-c2c5-4028-8544-77c7d344f4d1"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "1f8684b7-3884-483c-9749-b49400e95f57",
+                    "sourceMetadataId": "9997fe2a-04c5-44a8-92dd-47e343fdfc62",
+                    "destinationMetadataId": "471098f6-10f2-406f-a3c7-f344ee849ef8",
+                    "sourceColumnName": "TEL_Fax",
+                    "destinationColumnName": "TEL_Fax",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "471098f6-10f2-406f-a3c7-f344ee849ef8"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "925b5a3c-8d7c-4b64-bb1c-23eaf94c6e15",
+                    "sourceMetadataId": "fe2876e0-92b9-4338-bfda-0f844600f0fc",
+                    "destinationMetadataId": "d31b0914-2a28-4835-9ebb-9d3eb27325a3",
+                    "sourceColumnName": "CHK_Free",
+                    "destinationColumnName": "CHK_Free",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "d31b0914-2a28-4835-9ebb-9d3eb27325a3"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "1e8d2910-e28e-4c91-8bfd-c8d9ddc2c994",
+                    "sourceMetadataId": "4cbe8cac-58e9-4912-aa97-c36c37e95c40",
+                    "destinationMetadataId": "e11e5f7a-cadb-4199-9120-679a5cffedf2",
+                    "sourceColumnName": "MMO_History",
+                    "destinationColumnName": "MMO_History",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "e11e5f7a-cadb-4199-9120-679a5cffedf2"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "c38910f2-c41b-4132-8379-3b58ef53a701",
+                    "sourceMetadataId": "01f05eec-6a7e-4461-855c-26ef59768d7a",
+                    "destinationMetadataId": "fba6ebbb-3e4b-49bb-9cf0-a2e74917e46d",
+                    "sourceColumnName": "TXT_AboveSignature",
+                    "destinationColumnName": "TXT_AboveSignature",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "fba6ebbb-3e4b-49bb-9cf0-a2e74917e46d"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "38b5c820-f1f1-4d98-be66-4c799b21030b",
+                    "sourceMetadataId": "3f5acf24-a66c-4d5b-8973-01fbae2c0176",
+                    "destinationMetadataId": "f515f876-73fa-47dd-a8d9-4e9106199481",
+                    "sourceColumnName": "CHK_Lead",
+                    "destinationColumnName": "CHK_Lead",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "f515f876-73fa-47dd-a8d9-4e9106199481"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "fab5e1ff-f922-4bbd-86c1-fdfc060fef63",
+                    "sourceMetadataId": "15d56ee2-8539-4acd-9a8e-fee23ac15b9b",
+                    "destinationMetadataId": "4d452756-9f62-4f79-96ca-396131e20037",
+                    "sourceColumnName": "MMO_Letter",
+                    "destinationColumnName": "MMO_Letter",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "4d452756-9f62-4f79-96ca-396131e20037"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "5db10341-2ff2-4669-8190-d40a086b72f5",
+                    "sourceMetadataId": "0bc5870e-5f3d-4cd1-a58a-a970c341beba",
+                    "destinationMetadataId": "c1ff798d-5329-487a-a578-dede8374ef96",
+                    "sourceColumnName": "MMO_NextAction",
+                    "destinationColumnName": "MMO_NextAction",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "c1ff798d-5329-487a-a578-dede8374ef96"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "4a7676be-b3ec-470e-a2bb-c9b53db4e689",
+                    "sourceMetadataId": "8528f182-39d2-4bb1-99ec-399676f98360",
+                    "destinationMetadataId": "e5de844c-a429-4427-af5d-f837c847e481",
+                    "sourceColumnName": "DTT_NextActionDate",
+                    "destinationColumnName": "DTT_NextActionDate",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "e5de844c-a429-4427-af5d-f837c847e481"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "66b349e0-604d-4de5-96b8-c4082984fd1e",
+                    "sourceMetadataId": "5af68645-2e89-4929-8c56-6543f1bfc9d1",
+                    "destinationMetadataId": "4bb714ba-feed-4172-81c5-97031c84e3c8",
+                    "sourceColumnName": "MMO_Notes",
+                    "destinationColumnName": "MMO_Notes",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "4bb714ba-feed-4172-81c5-97031c84e3c8"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "a6c81535-7602-40a6-a774-064d42aa2654",
+                    "sourceMetadataId": "a16f9eae-5928-46e4-9665-0e40edd83fb0",
+                    "destinationMetadataId": "be13b671-9bd9-4944-bd7f-2550f54b7f29",
+                    "sourceColumnName": "CHK_ExtDevReview",
+                    "destinationColumnName": "CHK_ExtDevReview",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "be13b671-9bd9-4944-bd7f-2550f54b7f29"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "0445ecab-a87c-41e0-a136-7d5cd774fcde",
+                    "sourceMetadataId": "423fe6d9-40c9-46e8-9ba5-581d1f19caab",
+                    "destinationMetadataId": "c3c7e881-b262-4eb5-895f-b98fdf70e0a0",
+                    "sourceColumnName": "CHK_IncludeLetterhead",
+                    "destinationColumnName": "CHK_IncludeLetterhead",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "c3c7e881-b262-4eb5-895f-b98fdf70e0a0"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "7dc383d5-fc50-4c0f-a49b-0a1db1f7d4aa",
+                    "sourceMetadataId": "671e15c1-303e-4f1d-bcd9-97a75d69f2d0",
+                    "destinationMetadataId": "d4156a27-9e94-4cdb-a521-8a48d10720ed",
+                    "sourceColumnName": "MLS_Priority",
+                    "destinationColumnName": "MLS_Priority",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "d4156a27-9e94-4cdb-a521-8a48d10720ed"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "f78ae8fc-fff5-4243-ac41-fd819d0cd39e",
+                    "sourceMetadataId": "89119384-565d-4c55-a24c-45601cabe4df",
+                    "destinationMetadataId": "edb97530-5e52-43e4-bbbb-fc1137e99612",
+                    "sourceColumnName": "MLS_Purpose",
+                    "destinationColumnName": "MLS_Purpose",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "edb97530-5e52-43e4-bbbb-fc1137e99612"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "26da1f13-e54d-42fd-8d45-db339cd93aa5",
+                    "sourceMetadataId": "322e1e06-5874-4b74-8c68-862e1cc63281",
+                    "destinationMetadataId": "7d2e8310-750c-4348-8aec-906b8f56616f",
+                    "sourceColumnName": "TXT_Subj",
+                    "destinationColumnName": "TXT_Subj",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "7d2e8310-750c-4348-8aec-906b8f56616f"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "e349b66c-2c75-407c-affb-30909cd18d01",
+                    "sourceMetadataId": "8ed50e6d-d94c-44ee-85b2-0e78e449dcdc",
+                    "destinationMetadataId": "67dc4d8a-62b6-4c6b-b7e9-6ba25e7c9dcc",
+                    "sourceColumnName": "CHK_Report",
+                    "destinationColumnName": "CHK_Report",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "67dc4d8a-62b6-4c6b-b7e9-6ba25e7c9dcc"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "f6e26e7b-5456-4a48-b514-dd29b1aed6b9",
+                    "sourceMetadataId": "ba2e0894-aa56-4b4d-bf8c-2ba98719b598",
+                    "destinationMetadataId": "afa9fe43-8d9a-4ebd-a2b7-df614bb38855",
+                    "sourceColumnName": "MMO_SendData",
+                    "destinationColumnName": "MMO_SendData",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "afa9fe43-8d9a-4ebd-a2b7-df614bb38855"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "8c078345-67b8-4bc2-842a-76aeac7c55ae",
+                    "sourceMetadataId": "27c4fc9b-a731-4263-b3b1-430989f9f07d",
+                    "destinationMetadataId": "901d0fb5-ba5b-44cb-a7c1-aaade8a0ec14",
+                    "sourceColumnName": "CHK_Sent",
+                    "destinationColumnName": "CHK_Sent",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "901d0fb5-ba5b-44cb-a7c1-aaade8a0ec14"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "7b0acbaf-d674-40ba-ac15-78ee908d3d48",
+                    "sourceMetadataId": "e0a51357-4fb8-48b5-8169-6d1cd200cce5",
+                    "destinationMetadataId": "84f322b1-6d13-4c0c-b5a5-181d58480c15",
+                    "sourceColumnName": "CHK_Service",
+                    "destinationColumnName": "CHK_Service",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "84f322b1-6d13-4c0c-b5a5-181d58480c15"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "0338694a-9de8-49fd-9268-30f22920347a",
+                    "sourceMetadataId": "9007364e-cfda-47bd-8c58-2be3b5ebf742",
+                    "destinationMetadataId": "3a307bd2-e13c-4637-8943-da359467b490",
+                    "sourceColumnName": "CHK_ServiceExt",
+                    "destinationColumnName": "CHK_ServiceExt",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "3a307bd2-e13c-4637-8943-da359467b490"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "4c21bb17-ed0e-4605-a803-1881d7ee8702",
+                    "sourceMetadataId": "0f044834-8169-4173-a690-dfc7931f300c",
+                    "destinationMetadataId": "1b4ccc1c-d353-4505-ae17-b67c44ed7f84",
+                    "sourceColumnName": "TXT_Signature",
+                    "destinationColumnName": "TXT_Signature",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "1b4ccc1c-d353-4505-ae17-b67c44ed7f84"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "089e9c69-80c5-4098-8274-1804124a8e57",
+                    "sourceMetadataId": "9d3569f3-7a05-43a8-974f-767df2645d8f",
+                    "destinationMetadataId": "1f322727-0a01-49f1-9924-0b0ceef196e1",
+                    "sourceColumnName": "MLS_Status",
+                    "destinationColumnName": "MLS_Status",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "1f322727-0a01-49f1-9924-0b0ceef196e1"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "bab2fec3-1c6c-420b-be85-3776ab65bde5",
+                    "sourceMetadataId": "055ac169-e25b-4fe6-88c7-c3e684f3e832",
+                    "destinationMetadataId": "cf77ba60-ccbd-4de9-820d-08f2401a3436",
+                    "sourceColumnName": "MLS_Type",
+                    "destinationColumnName": "MLS_Type",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "cf77ba60-ccbd-4de9-820d-08f2401a3436"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "cf4e65da-823b-4a83-9d47-67b4729216e6",
+                    "sourceMetadataId": "801af205-fb50-4657-b93d-64df1c76a038",
+                    "destinationMetadataId": "a5d70f31-fbb8-4674-88ef-74d17a150dce",
+                    "sourceColumnName": "URL_URLs",
+                    "destinationColumnName": "URL_URLs",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "a5d70f31-fbb8-4674-88ef-74d17a150dce"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "dd1d195b-8721-4934-8696-d63609778b99",
+                    "sourceMetadataId": "d216d883-d64d-47a6-8ab4-4d039bf6fdd8",
+                    "destinationMetadataId": "2f8c85ce-f852-4d1f-9f86-73bf83fbaef8",
+                    "sourceColumnName": "CHK_UseSignature",
+                    "destinationColumnName": "CHK_UseSignature",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "2f8c85ce-f852-4d1f-9f86-73bf83fbaef8"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "1dd4118d-96da-441d-ba04-4844788bd935",
+                    "sourceMetadataId": "86205da8-3e7d-473d-bb76-d32b6fc94ae9",
+                    "destinationMetadataId": "a66b9aa3-dd30-4ca9-b67e-8179cfc499ad",
+                    "sourceColumnName": "TXT_ModBy",
+                    "destinationColumnName": "TXT_ModBy",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "a66b9aa3-dd30-4ca9-b67e-8179cfc499ad"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "653e7ada-99ef-431d-9fee-30e5f7f85129",
+                    "sourceMetadataId": "613e175a-086d-4668-89f3-88eb3f50ca3d",
+                    "destinationMetadataId": "1e0ebc92-828b-45de-8d3d-30f6ad43bebc",
+                    "sourceColumnName": "DTT_ModTime",
+                    "destinationColumnName": "DTT_ModTime",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "1e0ebc92-828b-45de-8d3d-30f6ad43bebc"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "d768c9dc-2733-4d67-a931-1229dc4c675a",
+                    "sourceMetadataId": "47cd0d34-2f05-4cf0-80c9-2c3e7d47852b",
+                    "destinationMetadataId": "008179cb-f564-4c58-b071-ca15c201c3d1",
+                    "sourceColumnName": "MMO_ImportData",
+                    "destinationColumnName": "MMO_ImportData",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "008179cb-f564-4c58-b071-ca15c201c3d1"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "c06a1031-b8b7-4eec-ab91-e68b11bfd821",
+                    "sourceMetadataId": "7802285d-76a8-46e6-84e0-be28b1d6163b",
+                    "destinationMetadataId": "d0f91cbf-fef3-4c80-9a05-242d389c6afe",
+                    "sourceColumnName": "MMO_Journal",
+                    "destinationColumnName": "MMO_Journal",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "d0f91cbf-fef3-4c80-9a05-242d389c6afe"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "e34ee967-f043-4595-b2b9-c2fb43e9ec87",
+                    "sourceMetadataId": "ddc80271-cd6f-4651-a5d1-8cda46c57312",
+                    "destinationMetadataId": "4085a636-513c-4047-ad9e-1a38a5380875",
+                    "sourceColumnName": "MMO_PalmData",
+                    "destinationColumnName": "MMO_PalmData",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "4085a636-513c-4047-ad9e-1a38a5380875"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "52cfc153-9ffe-4cad-8f76-160c9a270992",
+                    "sourceMetadataId": "8e5690d4-2b73-41d1-85b3-4645585fc818",
+                    "destinationMetadataId": "5d040042-aa04-4dbf-a465-5f99179ef488",
+                    "sourceColumnName": "MMO_WPData",
+                    "destinationColumnName": "MMO_WPData",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "5d040042-aa04-4dbf-a465-5f99179ef488"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "41cd2220-1f7d-4351-9dea-88e2777fc46b",
+                    "sourceMetadataId": "01d4445e-515c-404a-87d0-5c52892e1192",
+                    "destinationMetadataId": "9c033998-04a2-45f2-aca4-95d39d769427",
+                    "sourceColumnName": "TXT_WPID",
+                    "destinationColumnName": "TXT_WPID",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "9c033998-04a2-45f2-aca4-95d39d769427"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "206bae1c-82b3-4581-931d-bd4d09269492",
+                    "sourceMetadataId": "960b2af6-eef9-45e2-a1e4-c9fef64b2f56",
+                    "destinationMetadataId": "a05170da-aa29-49e2-9077-154d1d819b6b",
+                    "sourceColumnName": "SI__ShareState",
+                    "destinationColumnName": "SI__ShareState",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "a05170da-aa29-49e2-9077-154d1d819b6b"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "9b77ec32-15b7-4692-ab11-79e807bd80f2",
+                    "sourceMetadataId": "cc692b27-a62b-4fb4-b655-883a4ef7aa7d",
+                    "destinationMetadataId": "e5def55a-79f1-438b-a9a7-1ca3b45c82d9",
+                    "sourceColumnName": "CHK_Publish",
+                    "destinationColumnName": "CHK_Publish",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "e5def55a-79f1-438b-a9a7-1ca3b45c82d9"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "1d9b2844-806e-40a8-acd8-5cac8c89c43c",
+                    "sourceMetadataId": "985f7605-d1a4-4871-a75a-2397e6a06153",
+                    "destinationMetadataId": "d038df40-fc9b-4fc7-86f9-50bbb70ae6ec",
+                    "sourceColumnName": "LI__Custom1",
+                    "destinationColumnName": "LI__Custom1",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "d038df40-fc9b-4fc7-86f9-50bbb70ae6ec"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "6e6f5f5f-6448-4958-862b-bf05faa2ca69",
+                    "sourceMetadataId": "8103c456-e094-4d76-92fe-dddbdbb32860",
+                    "destinationMetadataId": "904f0a90-f990-4b84-b401-a1f2919fb82b",
+                    "sourceColumnName": "DR__Custom1",
+                    "destinationColumnName": "DR__Custom1",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "904f0a90-f990-4b84-b401-a1f2919fb82b"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "3e2adff3-3271-4fb6-9b65-40084837fe31",
+                    "sourceMetadataId": "d8b8020c-46c1-4714-95c4-d6c0ccd1b510",
+                    "destinationMetadataId": "620972be-73e7-4fe8-a07a-7250c312d47c",
+                    "sourceColumnName": "DTT_Custom1",
+                    "destinationColumnName": "DTT_Custom1",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "620972be-73e7-4fe8-a07a-7250c312d47c"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "f1509d9b-e492-42f3-8daf-f197d7724800",
+                    "sourceMetadataId": "4c848767-d611-4cd7-81f7-da70c8ed7135",
+                    "destinationMetadataId": "a67862cf-287d-4d0a-9d5b-dffc45aec65d",
+                    "sourceColumnName": "GID_CreatedBy_US",
+                    "destinationColumnName": "GID_CreatedBy_US",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "a67862cf-287d-4d0a-9d5b-dffc45aec65d"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "5ad16935-709a-4ad4-91ec-e91aa222de09",
+                    "sourceMetadataId": "2464a410-14f2-4e67-80a2-059fa943b0cb",
+                    "destinationMetadataId": "d6497b60-3b01-4831-99b0-3468f96fb596",
+                    "sourceColumnName": "GID_CreditedTo_US",
+                    "destinationColumnName": "GID_CreditedTo_US",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "d6497b60-3b01-4831-99b0-3468f96fb596"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "ac509f67-4912-4850-a14e-a1845af5fa62",
+                    "sourceMetadataId": "521ef300-0e05-401a-bfd5-1e67b93d42c0",
+                    "destinationMetadataId": "af2a0c5e-7354-4c1b-85b2-f5f55c7939e4",
+                    "sourceColumnName": "GID_Bill_CO",
+                    "destinationColumnName": "GID_Bill_CO",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "af2a0c5e-7354-4c1b-85b2-f5f55c7939e4"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "ef76e13d-0384-4b1a-8465-c167713f6fab",
+                    "sourceMetadataId": "ad9d98ce-84d5-4dff-89fa-d04866f096ef",
+                    "destinationMetadataId": "37b8e207-6d5b-421e-bf3c-fe85ad7eb6a4",
+                    "sourceColumnName": "GID_Template_DO",
+                    "destinationColumnName": "GID_Template_DO",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "37b8e207-6d5b-421e-bf3c-fe85ad7eb6a4"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "4a335157-f061-46b5-b229-d7fb351818c1",
+                    "sourceMetadataId": "6a6e3880-c90c-4189-9134-197bceba0a13",
+                    "destinationMetadataId": "32e1e3f5-6c81-45e0-a32c-e2bbf78b25e9",
+                    "sourceColumnName": "GID_Related_EL",
+                    "destinationColumnName": "GID_Related_EL",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "32e1e3f5-6c81-45e0-a32c-e2bbf78b25e9"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "0fc947fb-c466-4d6b-b794-92925aa1f8cc",
+                    "sourceMetadataId": "799df65a-f79a-4e03-b787-75e9f399c1ba",
+                    "destinationMetadataId": "e2eebaae-c028-49e1-b696-133320bba57a",
+                    "sourceColumnName": "GID_Related_LO",
+                    "destinationColumnName": "GID_Related_LO",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "e2eebaae-c028-49e1-b696-133320bba57a"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "95dcc700-e838-481b-8ede-2163cb216e2e",
+                    "sourceMetadataId": "3f5c81e7-e3ca-4dcd-b5f0-e5f3e4d7a303",
+                    "destinationMetadataId": "bcafbff3-37ac-4942-b644-7cc14b16bc24",
+                    "sourceColumnName": "GID_From_SO",
+                    "destinationColumnName": "GID_From_SO",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "bcafbff3-37ac-4942-b644-7cc14b16bc24"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "4064cba5-6daa-4081-8785-f9ad8b5c629b",
+                    "sourceMetadataId": "de056da8-c6fa-42dd-a35c-0923ce6c377f",
+                    "destinationMetadataId": "cfc8aad5-e6cf-4d93-a787-eb924569d7b3",
+                    "sourceColumnName": "TXT_ImportID",
+                    "destinationColumnName": "TXT_ImportID",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "cfc8aad5-e6cf-4d93-a787-eb924569d7b3"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "173001ff-d69b-489a-9f79-94e7e72fd7a6",
+                    "sourceMetadataId": "395fd369-da75-4160-a167-60828b1f4739",
+                    "destinationMetadataId": "5b573365-97bc-42de-ae3f-01932be23882",
+                    "sourceColumnName": "TXT_StartTimeYear",
+                    "destinationColumnName": "TXT_StartTimeYear",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "5b573365-97bc-42de-ae3f-01932be23882"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "c22190b0-696e-4972-a52c-387fefec0f23",
+                    "sourceMetadataId": "f2ae0f28-77c2-4a11-8018-99c27a06c699",
+                    "destinationMetadataId": "ce65eb93-03ad-45a6-aa4c-4281a6662767",
+                    "sourceColumnName": "SI__StartTimeMonth",
+                    "destinationColumnName": "SI__StartTimeMonth",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "ce65eb93-03ad-45a6-aa4c-4281a6662767"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "50c5745c-523f-4bb2-874f-0b03084c6ba3",
+                    "sourceMetadataId": "50034724-5313-4849-bba6-654c8d024a57",
+                    "destinationMetadataId": "58774e0b-7726-4b31-a6b5-d249facd2aa0",
+                    "sourceColumnName": "SI__StartTimeDay",
+                    "destinationColumnName": "SI__StartTimeDay",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "58774e0b-7726-4b31-a6b5-d249facd2aa0"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "c098197d-eb4a-4578-8ae4-5a4950abd6df",
+                    "sourceMetadataId": "ad078550-1e43-4de7-8609-277f0be4949c",
+                    "destinationMetadataId": "96d4f8aa-1a1b-45ac-b040-787e915ca450",
+                    "sourceColumnName": "TXT_ExternalID",
+                    "destinationColumnName": "TXT_ExternalID",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "96d4f8aa-1a1b-45ac-b040-787e915ca450"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "f0a0ab69-44fb-44ef-bb64-451614841273",
+                    "sourceMetadataId": "c3ffc8d1-11d1-442b-b4e9-2302ac246867",
+                    "destinationMetadataId": "d913720b-e351-4d09-9b28-f60a14843de0",
+                    "sourceColumnName": "TXT_ExternalSource",
+                    "destinationColumnName": "TXT_ExternalSource",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "d913720b-e351-4d09-9b28-f60a14843de0"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "7f3c2ed2-4863-4501-b160-d6b59545ec45",
+                    "sourceMetadataId": "37de3115-a284-460f-ac21-1f29ab0bd1aa",
+                    "destinationMetadataId": "2da693c7-d59b-4bea-81f9-989550bad753",
+                    "sourceColumnName": "TXT_ImpJobID",
+                    "destinationColumnName": "TXT_ImpJobID",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "2da693c7-d59b-4bea-81f9-989550bad753"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "5553b3e0-b7bf-43b0-8bc0-d47a086d97ed",
+                    "sourceMetadataId": "5cf421bb-0088-4e0d-8019-d1703da153dd",
+                    "destinationMetadataId": "0592b18b-3b8f-4dd3-a63b-1e0835560f84",
+                    "sourceColumnName": "TEL_Phone",
+                    "destinationColumnName": "TEL_Phone",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "0592b18b-3b8f-4dd3-a63b-1e0835560f84"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "793070cd-bda1-481a-9c82-652d45cff5e7",
+                    "sourceMetadataId": "dfa29029-5789-4922-9d36-3ade6ed97308",
+                    "destinationMetadataId": "203b396e-eba2-4d4b-9054-101519520a48",
+                    "sourceColumnName": "GID_Related_RS",
+                    "destinationColumnName": "GID_Related_RS",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "203b396e-eba2-4d4b-9054-101519520a48"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "d58f5a6e-3f06-4793-a1d2-461a6e496612",
+                    "sourceMetadataId": "2807a85e-e88f-4cae-b97e-98037cad6477",
+                    "destinationMetadataId": "11711fed-186a-426b-9822-65aecfb9b6ca",
+                    "sourceColumnName": "ADR_Attachments",
+                    "destinationColumnName": "ADR_Attachments",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "11711fed-186a-426b-9822-65aecfb9b6ca"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "9b82fca4-8634-4d8d-9a46-550fba2ad885",
+                    "sourceMetadataId": "053d99a3-5357-4cea-9a10-56b611150def",
+                    "destinationMetadataId": "4e4a201c-06da-49e7-8885-48333b53514d",
+                    "sourceColumnName": "GID_RELATED_RP",
+                    "destinationColumnName": "GID_RELATED_RP",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "4e4a201c-06da-49e7-8885-48333b53514d"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "9a5cb071-531e-49a4-adfd-e9b19853edbf",
+                    "sourceMetadataId": "68b408b2-975d-4466-8e23-9cb4b7fe988f",
+                    "destinationMetadataId": "db42a89b-38b2-4f57-bee6-4f2945047fc4",
+                    "sourceColumnName": "CHK_AUTOJOURNAL",
+                    "destinationColumnName": "CHK_AUTOJOURNAL",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "db42a89b-38b2-4f57-bee6-4f2945047fc4"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "4cf97f84-a1d5-438c-8ae8-2db801de53d3",
+                    "sourceMetadataId": "aff18dcd-023b-413f-bb10-b50abdcd480d",
+                    "destinationMetadataId": "fcd58827-a63b-426d-8cfe-30f1156c2440",
+                    "sourceColumnName": "MLS_REGION",
+                    "destinationColumnName": "MLS_REGION",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "fcd58827-a63b-426d-8cfe-30f1156c2440"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "95942388-c27e-411d-bd97-5431aa6a8030",
+                    "sourceMetadataId": "f1c6632e-577c-4c1b-afbc-f3d3936af85d",
+                    "destinationMetadataId": "41a6bdc4-45e3-4a6a-927c-dc3c1f7a5a8d",
+                    "sourceColumnName": "MLS_WebLeadProductType",
+                    "destinationColumnName": "MLS_WebLeadProductType",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "41a6bdc4-45e3-4a6a-927c-dc3c1f7a5a8d"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "e9e02576-706f-4fec-b34d-8faf62e66a2b",
+                    "sourceMetadataId": "2fd46e57-75ff-43a5-b1e2-6b8447d53076",
+                    "destinationMetadataId": "8d9a0831-c800-4b4a-ab69-220a7e7b3b8a",
+                    "sourceColumnName": "GID_WEBLEADPRODUCTTYPE_PE",
+                    "destinationColumnName": "GID_WEBLEADPRODUCTTYPE_PE",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "8d9a0831-c800-4b4a-ab69-220a7e7b3b8a"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "edd15ca7-b506-4a2f-9edb-4f714fea7171",
+                    "sourceMetadataId": "55bfdc42-1aea-49ef-9431-86566d422dee",
+                    "destinationMetadataId": "e31fcb7a-1535-4ff9-b745-c296687721f5",
+                    "sourceColumnName": "TXT_SUBJECT",
+                    "destinationColumnName": "TXT_SUBJECT",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "e31fcb7a-1535-4ff9-b745-c296687721f5"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "69c95bb9-a251-4124-8a9f-4d71ab52384f",
+                    "sourceMetadataId": "599cf439-962e-4e2f-b562-9904c4801452",
+                    "destinationMetadataId": "b4a722c8-76b0-4d5b-a54a-065f45d57091",
+                    "sourceColumnName": "GID_RELATED_PF",
+                    "destinationColumnName": "GID_RELATED_PF",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "b4a722c8-76b0-4d5b-a54a-065f45d57091"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "3588f622-5979-44f3-8c03-00f3213b677f",
+                    "sourceMetadataId": "8531cc47-8a9e-427e-bf6c-1f8daaebcd89",
+                    "destinationMetadataId": "7a74eebb-4789-4fd9-a0a7-3062fcdb5528",
+                    "sourceColumnName": "GID_RELATED_PD",
+                    "destinationColumnName": "GID_RELATED_PD",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "7a74eebb-4789-4fd9-a0a7-3062fcdb5528"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "89fe965e-9045-4367-bc7c-b875e520fd6e",
+                    "sourceMetadataId": "58dbf3b0-bcc7-4790-983c-6d500667ff0f",
+                    "destinationMetadataId": "46122933-92d3-495b-a828-2e559fdb0b80",
+                    "sourceColumnName": "Gid_TempCN",
+                    "destinationColumnName": "Gid_TempCN",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "46122933-92d3-495b-a828-2e559fdb0b80"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "da896b66-df10-44b5-bfeb-131d6f43096e",
+                    "sourceMetadataId": "c9f79136-d1c6-4f43-a568-ee9b08c0bcfd",
+                    "destinationMetadataId": "499ad8ee-1ca8-4a46-9417-2deb80ffd350",
+                    "sourceColumnName": "Gid_JCIID",
+                    "destinationColumnName": "Gid_JCIID",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "499ad8ee-1ca8-4a46-9417-2deb80ffd350"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "56e2849e-c35d-4503-94b6-78ed233bb5a3",
+                    "sourceMetadataId": "17683d4e-2f7f-452f-a7f8-15386f64a8b7",
+                    "destinationMetadataId": "3d77c6db-9fd5-4d77-86d6-b8c81a252f7e",
+                    "sourceColumnName": "GID_RELATED_BC",
+                    "destinationColumnName": "GID_RELATED_BC",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "3d77c6db-9fd5-4d77-86d6-b8c81a252f7e"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "79cb48b5-941c-498a-bc27-26105c81c70c",
+                    "sourceMetadataId": "b045f379-7799-48f5-8862-b426f94b2b59",
+                    "destinationMetadataId": "64cab395-6d8b-4248-ae8d-79a6508a4da8",
+                    "sourceColumnName": "GID_RELATED_BR",
+                    "destinationColumnName": "GID_RELATED_BR",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "64cab395-6d8b-4248-ae8d-79a6508a4da8"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "18da13ee-3800-4ad6-8000-8f77b692e8b9",
+                    "sourceMetadataId": "f823d430-7990-4e67-ab57-2f4b94953d4c",
+                    "destinationMetadataId": "3dc906b2-ea8c-42dc-93f4-724b828926f2",
+                    "sourceColumnName": "TXT_Segment",
+                    "destinationColumnName": "TXT_Segment",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "3dc906b2-ea8c-42dc-93f4-724b828926f2"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "9bef55f9-78d3-4c8e-88b8-4bef48f8acbf",
+                    "sourceMetadataId": "62dc9803-e0c9-4052-8fa6-bdebb676f17f",
+                    "destinationMetadataId": "78e20cdf-a13d-4cae-9437-fba15e8fc0e0",
+                    "sourceColumnName": "MLS_ICT",
+                    "destinationColumnName": "MLS_ICT",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "78e20cdf-a13d-4cae-9437-fba15e8fc0e0"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "257edf14-d13b-4ede-824a-6265cbe0a2d4",
+                    "sourceMetadataId": "57bfa63c-67f8-4b3b-822a-5eed21378bf7",
+                    "destinationMetadataId": "2e135786-fad0-4b7b-ad36-eacf64e71ce0",
+                    "sourceColumnName": "CHK_ProactiveCall",
+                    "destinationColumnName": "CHK_ProactiveCall",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "2e135786-fad0-4b7b-ad36-eacf64e71ce0"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "95986325-689d-426a-be92-0b967670c5b8",
+                    "sourceMetadataId": "48d854b9-5919-4811-a2cb-b0bf5b3bbb2e",
+                    "destinationMetadataId": "21f33b20-3207-44b4-9af2-92c96b75e2eb",
+                    "sourceColumnName": "MLS_DYK",
+                    "destinationColumnName": "MLS_DYK",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "21f33b20-3207-44b4-9af2-92c96b75e2eb"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "b2674761-71d7-4392-a313-a4e92d8d3607",
+                    "sourceMetadataId": "32d4df70-0076-492f-9097-b14180452d72",
+                    "destinationMetadataId": "55ff6c88-7130-494a-a9a0-638bbbec097d",
+                    "sourceColumnName": "MLS_rDYK",
+                    "destinationColumnName": "MLS_rDYK",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "55ff6c88-7130-494a-a9a0-638bbbec097d"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "ef760ca3-35a6-4c26-8032-e3c8d158da70",
+                    "sourceMetadataId": "f5f6ab8b-1fbe-442b-a7d7-e82493d3c828",
+                    "destinationMetadataId": "33c430fd-3b04-4d4b-8f02-78786a388cd4",
+                    "sourceColumnName": "MLS_Pivot",
+                    "destinationColumnName": "MLS_Pivot",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "33c430fd-3b04-4d4b-8f02-78786a388cd4"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "4b7f68ea-30b8-4d9a-ab87-524aa44718b9",
+                    "sourceMetadataId": "7aae0c28-e09a-4569-ba3d-d5d706329d17",
+                    "destinationMetadataId": "e1b9504e-01f9-4399-96c3-1b45b06c0602",
+                    "sourceColumnName": "CHK_PercentageofBusiness",
+                    "destinationColumnName": "CHK_PercentageofBusiness",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "e1b9504e-01f9-4399-96c3-1b45b06c0602"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "df891d96-6a3e-443b-8ffc-1f7393c92d44",
+                    "sourceMetadataId": "856d96d6-8420-4993-922e-ae3691b569d4",
+                    "destinationMetadataId": "73cf7d59-ca4a-4586-8bf5-032ea0a4e5d3",
+                    "sourceColumnName": "MLS_InternalRef",
+                    "destinationColumnName": "MLS_InternalRef",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "73cf7d59-ca4a-4586-8bf5-032ea0a4e5d3"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "7891210c-9470-40cb-bcf3-a722bda924ab",
+                    "sourceMetadataId": "7866f96a-fd8b-4e14-b065-7bb48b234a1a",
+                    "destinationMetadataId": "1745fa63-3fd0-4f48-88c8-3e2ba4edc259",
+                    "sourceColumnName": "MLS_ExternalRef",
+                    "destinationColumnName": "MLS_ExternalRef",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "1745fa63-3fd0-4f48-88c8-3e2ba4edc259"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "5fdf1f1d-4c40-46e1-901d-84296f862830",
+                    "sourceMetadataId": "1bda5e1e-baa7-474a-97ec-81e5c014901c",
+                    "destinationMetadataId": "32bb3c82-fe94-4fd9-9700-18e167295073",
+                    "sourceColumnName": "CHK_HandWrittenNote",
+                    "destinationColumnName": "CHK_HandWrittenNote",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "32bb3c82-fe94-4fd9-9700-18e167295073"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "8bb34071-e7c1-4cda-9a95-5dea312f70c6",
+                    "sourceMetadataId": "ca62f873-155e-4e4e-99cd-6659e94ab2bd",
+                    "destinationMetadataId": "ebf49db3-948f-45b1-8334-1912def1b4a1",
+                    "sourceColumnName": "CHK_SuccessOfTheWeek",
+                    "destinationColumnName": "CHK_SuccessOfTheWeek",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "ebf49db3-948f-45b1-8334-1912def1b4a1"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "470dc8de-ff34-49ad-a2fb-08984266e30b",
+                    "sourceMetadataId": "6ed1fbe4-9ad8-43d4-98c9-923d6f51c9c3",
+                    "destinationMetadataId": "676b1a30-22d6-4d27-9e06-b7cb823e1a6b",
+                    "sourceColumnName": "CUR_ExpectedValue",
+                    "destinationColumnName": "CUR_ExpectedValue",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "676b1a30-22d6-4d27-9e06-b7cb823e1a6b"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "6987d9e2-5afb-4245-aabe-3b3007baccf5",
+                    "sourceMetadataId": "d472b5a1-3612-4eee-8b95-ac164d83e3f8",
+                    "destinationMetadataId": "8f770048-f30f-4ad1-a3c9-be8aca668bc7",
+                    "sourceColumnName": "SI__ICT",
+                    "destinationColumnName": "SI__ICT",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "8f770048-f30f-4ad1-a3c9-be8aca668bc7"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "52c33502-6e9b-4c84-a95f-7274477e09a0",
+                    "sourceMetadataId": "ea5ca250-c1d4-4e9e-bb6c-4670a6ee35be",
+                    "destinationMetadataId": "6780e2b9-f091-4d19-9187-abbf9683a3e2",
+                    "sourceColumnName": "SI__PROACTIVECALL",
+                    "destinationColumnName": "SI__PROACTIVECALL",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "6780e2b9-f091-4d19-9187-abbf9683a3e2"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "38c7926d-9a91-40a9-9fe0-46fdda699ccb",
+                    "sourceMetadataId": "6b8ab221-2cad-4ca0-9eeb-8a28fc8760f0",
+                    "destinationMetadataId": "925daaa2-9996-4b76-ad34-e24a0659c7a6",
+                    "sourceColumnName": "SI__DYK",
+                    "destinationColumnName": "SI__DYK",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "925daaa2-9996-4b76-ad34-e24a0659c7a6"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "93a8f017-9d06-422b-b4ff-44b0f3d9c634",
+                    "sourceMetadataId": "37f89671-dfe8-42a0-ac4c-6ef18e56072a",
+                    "destinationMetadataId": "b92b207b-5dd7-450c-94ed-e02ceaba3ef8",
+                    "sourceColumnName": "SI__RDYK",
+                    "destinationColumnName": "SI__RDYK",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "b92b207b-5dd7-450c-94ed-e02ceaba3ef8"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "5f1251e7-de29-4df1-b255-14282474c766",
+                    "sourceMetadataId": "145ebcb6-7feb-4ef5-9525-34f5ffbb1f9e",
+                    "destinationMetadataId": "e53c3b33-b7f9-4a6f-b922-61a87708151b",
+                    "sourceColumnName": "SI__PIVOT",
+                    "destinationColumnName": "SI__PIVOT",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "e53c3b33-b7f9-4a6f-b922-61a87708151b"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "4fdf8f26-d0cc-4e4a-8257-b6274522a4b7",
+                    "sourceMetadataId": "78f2fd64-f65d-4744-a638-588df696c8c0",
+                    "destinationMetadataId": "e20eead6-2914-4e4b-97d5-1d672600d686",
+                    "sourceColumnName": "SI__PERCENTAGEOFBUSINESS",
+                    "destinationColumnName": "SI__PERCENTAGEOFBUSINESS",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "e20eead6-2914-4e4b-97d5-1d672600d686"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "aa6b7430-76ee-46bf-9c67-4612a15ad3bd",
+                    "sourceMetadataId": "2ea586f9-766e-4f9d-aa9f-b02d105ee2e6",
+                    "destinationMetadataId": "a8cc88bd-b153-4187-8842-025967e98db6",
+                    "sourceColumnName": "SI__INTERNALREF",
+                    "destinationColumnName": "SI__INTERNALREF",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "a8cc88bd-b153-4187-8842-025967e98db6"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "34a80449-ef68-48de-bdc1-6c9704f142ad",
+                    "sourceMetadataId": "4cc4a23b-df03-4170-924b-e9a31eb8873a",
+                    "destinationMetadataId": "0eae18ac-0d82-45c0-a273-e2769ba4cd16",
+                    "sourceColumnName": "SI__EXTERNALREF",
+                    "destinationColumnName": "SI__EXTERNALREF",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "0eae18ac-0d82-45c0-a273-e2769ba4cd16"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "77740a77-0c7c-49bf-b8f3-60acea829564",
+                    "sourceMetadataId": "9b3f34bd-c287-47e9-93fa-82ae92284702",
+                    "destinationMetadataId": "0241475c-2e84-4e43-868e-d755c1c3e165",
+                    "sourceColumnName": "SI__HANDWRITTENNOTE",
+                    "destinationColumnName": "SI__HANDWRITTENNOTE",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "0241475c-2e84-4e43-868e-d755c1c3e165"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "38c77dab-bf4f-4738-a054-cabbb9413594",
+                    "sourceMetadataId": "3e29a360-fec2-4356-8a6d-18286e433741",
+                    "destinationMetadataId": "a1d6de52-f40c-4334-89f2-2dde5bd46088",
+                    "sourceColumnName": "SI__SUCCESSOFTHEWEEK",
+                    "destinationColumnName": "SI__SUCCESSOFTHEWEEK",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "a1d6de52-f40c-4334-89f2-2dde5bd46088"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "16f13b8b-0245-4102-8ad5-2b5fd2f8693b",
+                    "sourceMetadataId": "c1c8b61b-03e2-4205-bdd2-43d2e378a823",
+                    "destinationMetadataId": "f8b6d1fe-81b6-4a7f-a4ed-2a2f73a3bc9d",
+                    "sourceColumnName": "SR__IgniteTotal",
+                    "destinationColumnName": "SR__IgniteTotal",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "f8b6d1fe-81b6-4a7f-a4ed-2a2f73a3bc9d"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "e1ef09c2-b571-468b-a69a-f62dd353715b",
+                    "sourceMetadataId": "a5252510-6f18-4446-85f7-dc43a8734822",
+                    "destinationMetadataId": "f6d2563e-9799-4fb0-ac01-f3db57915db8",
+                    "sourceColumnName": "MLS_PercentageOfBusiness",
+                    "destinationColumnName": "MLS_PercentageOfBusiness",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "7e8e561b-2d26-49a2-b3b2-df2f8d60e358",
+                    "destinationTaskId": "8a7a66a6-9990-4514-a682-ca8a808bf4a9",
+                    "sourceTaskId": "999041e4-e063-43f0-a585-0c2d134069ab",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "f6d2563e-9799-4fb0-ac01-f3db57915db8"
+                    }
+                }
+            ]
+        }
+    ],
+    "sequence": {
+        "3ea7cec0-c5b2-47ba-8538-7f62f39fa8ed": []
+    },
+    "taskSequence": {
+        "999041e4-e063-43f0-a585-0c2d134069ab": [
+            "8a7a66a6-9990-4514-a682-ca8a808bf4a9"
+        ]
+    }
+}

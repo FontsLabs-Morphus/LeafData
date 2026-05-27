@@ -1,0 +1,666 @@
+import os
+import csv
+from typing import Iterable
+
+from airflow.models import BaseOperator
+from airflow.providers.salesforce.hooks.salesforce import SalesforceHook
+from airflow.providers.salesforce.operators.bulk import SalesforceBulkOperator
+from simple_salesforce.exceptions import SalesforceMalformedRequest, SalesforceAuthenticationFailed, SalesforceGeneralError
+from exceptions.salesforce_exceptions import SalesforceNoRecordsFound
+from simple_salesforce import format_soql
+from airflow.utils.context import Context
+from custom_operators.constants import NT_TRANSFORMATIONS, SALESFORCE_RECORDS_LIMIT, SALESFORCE_BULK_BATCH_SIZE
+from custom_operators.metaclass import Source, Destination
+
+from custom_logger.execution_logger import log_execution
+from exceptions.custom_exception import MorphusAirflowException
+from custom_logger.metrics_logger import (
+    MetricsContext,
+    log_source_metrics,
+    log_destination_metrics,
+    csv_profile,
+)
+
+
+
+def _setup_connection(salesforce_conn_id: str, log) -> SalesforceHook:
+    """
+    Establish a connection to Salesforce using the provided connection ID.
+
+    Parameters:
+        salesforce_conn_id (str): Salesforce connection ID.
+        log: Logger instance to log connection status.
+
+    Returns:
+        SalesforceHook: Salesforce hook object for interacting with the Salesforce API.
+    """
+    try:
+        hook = SalesforceHook(salesforce_conn_id=salesforce_conn_id)
+        conn = hook.get_conn()
+        log.info(f"Connected to Salesforce with connection ID {salesforce_conn_id}")
+        return hook, conn
+
+    except SalesforceAuthenticationFailed as e:
+        log.error(f"Salesforce authentication failed: {e}")
+        raise MorphusAirflowException(
+            message="Salesforce authentication failed",
+            error_source="_setup_connection",
+            original_exception=e
+        ) from e
+
+    except MorphusAirflowException:
+        # Pass through if already wrapped upstream
+        raise
+
+    except Exception as e:
+        log.error(f"Error connecting to Salesforce: {e}")
+        raise MorphusAirflowException(
+            message="Failed to connect to Salesforce",
+            error_source="_setup_connection",
+            original_exception=e
+        ) from e
+
+
+class LoadSalesforceOperator(BaseOperator, Source):
+    """
+    Streaming pull from Salesforce.
+
+    - Uses SOQL pagination (queryMore)
+    - Streams records record-by-record
+    - Uses _fetch_data_stream / _transform_data_stream / _save_data_stream
+    """
+
+    def __init__(
+        self,
+        salesforce_conn_id: str,
+        object_name: str,
+        header_less_file: str,
+        headers: list[str],
+        tx_list: list[list],
+        custom_query: str = None,
+        ext: str = "csv",
+        delimiter: str = ",",
+        *args,
+        **kwargs,
+    ) -> None:
+        super().__init__(*args, **kwargs)
+
+        self.task_id = kwargs.get("task_id")
+        self.salesforce_conn_id = salesforce_conn_id
+        self.object_name = object_name
+        self.custom_query = custom_query
+        self.header_less_file = header_less_file
+        self.headers = headers
+        self.ext = ext
+        self.delimiter = delimiter
+
+        self.tx_list = [NT_TRANSFORMATIONS(*tx) for tx in tx_list]
+
+        # --------------------------------------------
+        # SOQL resolution (constants-style)
+        # --------------------------------------------
+        self.sql = custom_query or (
+            f"SELECT FIELDS(ALL) FROM {self.object_name} "
+            f"LIMIT {SALESFORCE_RECORDS_LIMIT}"
+        )
+
+        self.sql = format_soql(self.sql)
+
+        if not self.sql.strip():
+            raise MorphusAirflowException(
+                message="Salesforce SOQL query cannot be empty.",
+                task_id=self.task_id,
+                error_source="LoadSalesforceOperator.__init__"
+            )
+
+        # Will be initialized in _setup_connection()
+        self._db_headers: list[str] = []
+
+    def _source_descriptor(self) -> dict:
+        return {
+            "source_type": "SALESFORCE",
+            "source_location": "SALESFORCE",
+            "source_object": self.object_name,
+            "header_less_file": str(self.header_less_file).lower() == "yes",
+            "delimiter": self.delimiter,
+        }
+
+    def _setup_connection(self) -> SalesforceHook:
+        """Connect to Salesforce."""
+        self.log.info("Connecting to Salesforce...")
+        try:
+            hook = SalesforceHook(salesforce_conn_id=self.salesforce_conn_id)
+            conn = hook.get_conn()
+            self.log.info("Salesforce connection successful.")
+            return hook, conn
+
+        except MorphusAirflowException:
+            raise
+
+        except Exception as e:
+            self.log.error(f"Error connecting to Salesforce: {e}")
+            raise MorphusAirflowException(
+                message="Failed to connect to Salesforce",
+                task_id=self.task_id,
+                error_source="LoadSalesforceOperator._setup_connection",
+                original_exception=e
+            ) from e
+
+    def _fetch_data_stream(self, hook: SalesforceHook) -> Iterable[list]:
+        """
+        Generator yielding Salesforce rows using query / queryMore.
+        """
+        self.log.info(f"Executing Salesforce SOQL: {self.sql}")
+
+        try:
+            result = hook.make_query(self.sql)
+
+            records = result.get("records", [])
+            done = result.get("done", True)
+            next_url = result.get("nextRecordsUrl")
+
+            if not records:
+                return
+
+            self._db_headers = [
+                key for key in records[0].keys() if key != "attributes"
+            ]
+
+            for rec in records:
+                yield [rec.get(col) for col in self._db_headers]
+
+            while not done and next_url:
+                result = hook.get_conn().query_more(next_url, True)
+                records = result.get("records", [])
+                done = result.get("done", True)
+                next_url = result.get("nextRecordsUrl")
+
+                for rec in records:
+                    yield [rec.get(col) for col in self._db_headers]
+
+        except MorphusAirflowException:
+            raise
+
+        except Exception as e:
+            self.log.error(f"Error occurred while fetching data from Salesforce: {e}")
+            raise MorphusAirflowException(
+                message="Failed while streaming data from Salesforce",
+                task_id=self.task_id,
+                error_source="LoadSalesforceOperator._fetch_data_stream",
+                original_exception=e
+            ) from e
+
+    def execute(self, context: Context) -> None:
+        dag_id = context["dag"].dag_id
+        run_id = context["run_id"]
+
+        self._metrics = MetricsContext(
+            dag_id=dag_id,
+            run_id=run_id,
+            task_id=self.task_id
+        )
+
+        self.log.info(
+            "[METRICS][INIT] metrics_context_created=True | dag_id=%s | run_id=%s | task_id=%s",
+            dag_id, run_id, self.task_id
+        )
+
+        try:
+            hook, conn = self._setup_connection()
+
+            raw_iter = self._fetch_data_stream(hook)
+
+            transformed_iter = self._transform_data_stream(
+                raw_iter=raw_iter,
+                header_less_file=self.header_less_file,
+                headers=[h.lower() for h in self._db_headers],
+            )
+
+            self._save_data_stream(
+                context=context,
+                row_iter=transformed_iter,
+                ext=self.ext,
+                delimiter=self.delimiter,
+            )
+
+            self._metrics.finish()
+            d = self._source_descriptor()
+
+            self.log.info(
+                "[METRICS][PRE_DB_INSERT] "
+                "status=SUCCESS | rows_read=%s | rows_after_transform=%s | rows_written=%s | "
+                "cols_read=%s | cols_after_transform=%s | file_path=%s",
+                self._metrics.rows_read,
+                self._metrics.rows_after_transform,
+                self._metrics.rows_written,
+                self._metrics.cols_read,
+                self._metrics.cols_after_transform,
+                self._metrics.file_path,
+            )
+
+            log_source_metrics(
+                dag_id=self._metrics.dag_id,
+                run_id=self._metrics.run_id,
+                task_id=self._metrics.task_id,
+
+                source_type=d["source_type"],
+                source_location=d["source_location"],
+                source_object=d["source_object"],
+
+                header_less_file=d["header_less_file"],
+                delimiter=d["delimiter"],
+
+                cols_read=self._metrics.cols_read,
+                rows_read=self._metrics.rows_read,
+
+                cols_after_transform=self._metrics.cols_after_transform,
+                rows_after_transform=self._metrics.rows_after_transform,
+
+                rows_written=self._metrics.rows_written,
+                file_path=self._metrics.file_path,
+
+                transform_count=self._metrics.transform_count,
+                has_expression=self._metrics.has_expression,
+
+                status="SUCCESS",
+
+                start_time=self._metrics.start_time,
+                end_time=self._metrics.end_time,
+                duration_ms=self._metrics.duration_ms,
+            )
+
+
+        except MorphusAirflowException as e:
+            log_execution(
+                dag_id=dag_id,
+                task_id=self.task_id,
+                run_id=run_id,
+                status="FAILED",
+                error_source=e.error_source,
+                error_message=str(e),
+                root_cause=repr(e.original_exception),
+            )
+
+            self._metrics.finish()
+            d = self._source_descriptor()
+
+            log_source_metrics(
+                dag_id=self._metrics.dag_id,
+                run_id=self._metrics.run_id,
+                task_id=self._metrics.task_id,
+
+                source_type=d["source_type"],
+                source_location=d["source_location"],
+                source_object=d["source_object"],
+
+                header_less_file=d["header_less_file"],
+                delimiter=d["delimiter"],
+
+                cols_read=self._metrics.cols_read,
+                rows_read=self._metrics.rows_read,
+
+                cols_after_transform=self._metrics.cols_after_transform,
+                rows_after_transform=self._metrics.rows_after_transform,
+
+                rows_written=self._metrics.rows_written,
+                file_path=self._metrics.file_path,
+
+                transform_count=self._metrics.transform_count,
+                has_expression=self._metrics.has_expression,
+
+                status="FAILED",
+
+                start_time=self._metrics.start_time,
+                end_time=self._metrics.end_time,
+                duration_ms=self._metrics.duration_ms,
+
+                error_source=e.error_source,
+                error_message=str(e),
+            )
+
+            raise
+
+        except Exception as e:
+            log_execution(
+                dag_id=dag_id,
+                task_id=self.task_id,
+                run_id=run_id,
+                status="FAILED",
+                error_source="LoadSalesforceOperator.execute",
+                error_message=str(e),
+                root_cause=repr(e),
+            )
+
+            self._metrics.finish()
+            d = self._source_descriptor()
+
+            log_source_metrics(
+                dag_id=self._metrics.dag_id,
+                run_id=self._metrics.run_id,
+                task_id=self._metrics.task_id,
+
+                source_type=d["source_type"],
+                source_location=d["source_location"],
+                source_object=d["source_object"],
+
+                header_less_file=d["header_less_file"],
+                delimiter=d["delimiter"],
+
+                cols_read=self._metrics.cols_read,
+                rows_read=self._metrics.rows_read,
+
+                cols_after_transform=self._metrics.cols_after_transform,
+                rows_after_transform=self._metrics.rows_after_transform,
+
+                rows_written=self._metrics.rows_written,
+                file_path=self._metrics.file_path,
+
+                transform_count=self._metrics.transform_count,
+                has_expression=self._metrics.has_expression,
+
+                status="FAILED",
+
+                start_time=self._metrics.start_time,
+                end_time=self._metrics.end_time,
+                duration_ms=self._metrics.duration_ms,
+
+                error_source="LoadSalesforceOperator.execute",
+                error_message=str(e),
+            )
+
+            raise
+        finally:
+            try:
+                if conn:
+                    conn.close()
+                    self.log.info(" Connection closed successfully.")
+            except Exception as cleanup_error:
+                self.log.warning(
+                    f" Failed to close connection: {cleanup_error}"
+                )
+
+
+class PushSalesforceOperator(BaseOperator, Destination):
+    """
+    Airflow operator to upload data into Salesforce using the bulk API.
+
+    Attributes:
+        salesforce_conn_id (str): Salesforce connection ID.
+        object_name (str): Target Salesforce object for data insertion.
+    """
+
+    def __init__(
+        self,
+        salesforce_conn_id: str,
+        data_write_mode: str,
+        object_name: str,
+        *args,
+        **kwargs
+    ) -> None:
+        """
+        Initialize PushSalesforceOperator.
+
+        Parameters:
+            salesforce_conn_id (str): Salesforce connection ID.
+            object_name (str): Target Salesforce object.
+            *args: Additional arguments for Airflow operator.
+            **kwargs: Additional keyword arguments for Airflow operator.
+        """
+        super().__init__(*args, **kwargs)
+        self.task_id = kwargs.get("task_id")
+        self.salesforce_conn_id = salesforce_conn_id
+        self.object_name = object_name
+        self.data_write_mode = data_write_mode
+
+    def _destination_descriptor(self) -> dict:
+        return {
+            "destination_type": "SALESFORCE",
+            "destination_location": "SALESFORCE",
+            "destination_object": self.object_name,
+            "write_mode": self.data_write_mode,
+        }
+
+    def _upload_data(self, hook, data_filename: str, context: Context) -> None:
+        """
+        Upload data to Salesforce using the bulk API.
+
+        Parameters:
+            hook (SalesforceHook): Salesforce connection object.
+            data_filename (str): CSV file containing data to be uploaded.
+            context (Context): Airflow execution context.
+        """
+        try:
+            self.log.info(f"Uploading data from file: {data_filename}")
+
+            if not os.path.exists(data_filename):
+                self.log.error(f"File not found: {data_filename}")
+                raise MorphusAirflowException(
+                    message=f"File not found: {data_filename}",
+                    task_id=self.task_id,
+                    error_source="PushSalesforceOperator._upload_data"
+                )
+
+            with open(data_filename, "r", encoding="utf-8") as file:
+                payload = list(csv.DictReader(file))
+
+            if not payload:
+                self.log.error(f"No data in file: {data_filename}")
+                raise MorphusAirflowException(
+                    message=f"No data found in file: {data_filename}",
+                    task_id=self.task_id,
+                    error_source="PushSalesforceOperator._upload_data"
+                )
+
+            bulk_operator = SalesforceBulkOperator(
+                task_id="salesforce_bulk_upload",
+                operation="upsert",  # insert/update/upsert controlled here
+                object_name=self.object_name,
+                payload=payload,
+                salesforce_conn_id=self.salesforce_conn_id,
+                batch_size=SALESFORCE_BULK_BATCH_SIZE,
+                use_serial=False,
+            )
+
+            bulk_operator.execute(context)
+
+            self.log.info("Bulk data upload completed successfully.")
+
+        except MorphusAirflowException:
+            # Already structured — just propagate
+            raise
+
+        except SalesforceGeneralError as e:
+            self.log.error(f"Salesforce bulk API error: {e}")
+            raise MorphusAirflowException(
+                message="Salesforce bulk API failed",
+                task_id=self.task_id,
+                error_source="PushSalesforceOperator._upload_data",
+                original_exception=e
+            ) from e
+
+        except IOError as e:
+            self.log.error(f"I/O error while reading CSV file: {e}")
+            raise MorphusAirflowException(
+                message="I/O error while reading Salesforce input file",
+                task_id=self.task_id,
+                error_source="PushSalesforceOperator._upload_data",
+                original_exception=e
+            ) from e
+
+        except Exception as e:
+            self.log.error(f"Unexpected error during Salesforce upload: {e}")
+            raise MorphusAirflowException(
+                message="Unexpected error during Salesforce bulk upload",
+                task_id=self.task_id,
+                error_source="PushSalesforceOperator._upload_data",
+                original_exception=e
+            ) from e
+
+    def execute(self, context: Context) -> None:
+        """
+        Execute the data upload to Salesforce.
+
+        Parameters:
+            context (Context): Airflow task execution context.
+        """
+
+        dag_id = context["dag"].dag_id
+        run_id = context["run_id"]
+
+        self._metrics = MetricsContext(
+            dag_id=dag_id,
+            run_id=run_id,
+            task_id=self.task_id
+        )
+
+        self.log.info(
+            "[METRICS][INIT] metrics_context_created=True | dag_id=%s | run_id=%s | task_id=%s",
+            dag_id, run_id, self.task_id
+        )
+
+        try:
+            hook, conn = _setup_connection(self.salesforce_conn_id, self.log)
+            data_filename = self._fetch_data(context)
+            rows, cols = csv_profile(data_filename, delimiter=",")
+
+            self._metrics.rows_loaded = rows
+            self._metrics.cols_loaded = cols
+            self._metrics.source_file_path = data_filename
+
+            self.log.info(
+                "[METRICS][DEST][CSV_PROFILE] rows_loaded=%s | cols_loaded=%s | file_path=%s",
+                rows, cols, data_filename
+            )
+
+            self._upload_data(hook, data_filename, context)
+
+            self._metrics.finish()
+            d = self._destination_descriptor()
+
+            self.log.info(
+                "[METRICS][PRE_DB_INSERT][DEST] status=SUCCESS | rows_loaded=%s | cols_loaded=%s | file_path=%s",
+                self._metrics.rows_loaded,
+                self._metrics.cols_loaded,
+                self._metrics.source_file_path,
+            )
+
+            log_destination_metrics(
+                dag_id=self._metrics.dag_id,
+                run_id=self._metrics.run_id,
+                task_id=self._metrics.task_id,
+
+                destination_type=d["destination_type"],
+                destination_location=d["destination_location"],
+                destination_object=d["destination_object"],
+                write_mode=d["write_mode"],
+
+                cols_loaded=self._metrics.cols_loaded,
+                rows_loaded=self._metrics.rows_loaded,
+                source_file_path=self._metrics.source_file_path,
+
+                status="SUCCESS",
+
+                start_time=self._metrics.start_time,
+                end_time=self._metrics.end_time,
+                duration_ms=self._metrics.duration_ms,
+            )
+            self._cleanup_temp_file(data_filename)
+
+
+
+        except MorphusAirflowException as e:
+            log_execution(
+                dag_id=dag_id,
+                task_id=self.task_id,
+                run_id=run_id,
+                status="FAILED",
+                error_source=e.error_source,
+                error_message=str(e),
+                root_cause=repr(e.original_exception)
+            )
+
+            self._metrics.finish()
+            d = self._destination_descriptor()
+
+            log_destination_metrics(
+                dag_id=self._metrics.dag_id,
+                run_id=self._metrics.run_id,
+                task_id=self._metrics.task_id,
+
+                destination_type=d["destination_type"],
+                destination_location=d["destination_location"],
+                destination_object=d["destination_object"],
+                write_mode=d["write_mode"],
+
+                cols_loaded=self._metrics.cols_loaded,
+                rows_loaded=self._metrics.rows_loaded,
+                source_file_path=self._metrics.source_file_path,
+
+                status="FAILED",
+
+                start_time=self._metrics.start_time,
+                end_time=self._metrics.end_time,
+                duration_ms=self._metrics.duration_ms,
+
+                error_source=e.error_source,
+                error_message=str(e),
+            )
+
+            raise
+
+        except Exception as e:
+
+            log_execution(
+                dag_id=dag_id,
+                task_id=self.task_id,
+                run_id=run_id,
+                status="FAILED",
+                error_source="PushSalesforceOperator.execute",
+                error_message=str(e),
+                root_cause=repr(e)
+            )
+
+            self._metrics.finish()
+            d = self._destination_descriptor()
+
+            log_destination_metrics(
+                dag_id=self._metrics.dag_id,
+                run_id=self._metrics.run_id,
+                task_id=self._metrics.task_id,
+
+                destination_type=d["destination_type"],
+                destination_location=d["destination_location"],
+                destination_object=d["destination_object"],
+                write_mode=d["write_mode"],
+
+                cols_loaded=self._metrics.cols_loaded,
+                rows_loaded=self._metrics.rows_loaded,
+                source_file_path=self._metrics.source_file_path,
+
+                status="FAILED",
+
+                start_time=self._metrics.start_time,
+                end_time=self._metrics.end_time,
+                duration_ms=self._metrics.duration_ms,
+
+                error_source=e.error_source,
+                error_message=str(e),
+            )
+
+            raise MorphusAirflowException(
+                message="Failed during PushSalesforceOperator execution",
+                task_id=self.task_id,
+                error_source="PushSalesforceOperator.execute",
+                original_exception=e
+            ) from e
+        finally:
+            try:
+                if conn:
+                    conn.close()
+                    self.log.info(" Connection closed successfully.")
+            except Exception as cleanup_error:
+                self.log.warning(
+                    f" Failed to close connection: {cleanup_error}"
+                )
+
+

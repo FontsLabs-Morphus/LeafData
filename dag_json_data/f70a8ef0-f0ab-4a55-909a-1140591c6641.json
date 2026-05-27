@@ -1,0 +1,79 @@
+{
+  "pipelineId": "f70a8ef0-f0ab-4a55-909a-1140591c6641",
+  "scheduleInterval": "@once",
+  "startDate": "04/22/2026",
+  "catchup": false,
+  "jobs": [
+    {
+      "id": "5b8eaf6a-e5c9-4593-9486-c3d1862b9fa5",
+      "source": {
+        "sourceName": "mariadb_src",
+        "sourceType": "MARIADB",
+        "sourceProperties": {
+          "taskId": "ab3ff4bc-78db-4e55-91ad-c8b96ed6d969",
+          "connectionId": "mariadb-f70a8ef0",
+          "tableName": "books",
+          "bucketName": null,
+          "containerName": null,
+          "schemaName": null,
+          "objectName": null,
+          "sourceJobType": null,
+          "customQuery": null,
+          "path": null,
+          "delimiter": null,
+          "headerlessFile": "N",
+          "headers": [],
+          "dataWriteMode": "append"
+        }
+      },
+      "destinations": [
+        {
+          "destinationName": "mysql_dst",
+          "destinationType": "MYSQL",
+          "destinationProperties": {
+            "taskId": "20074a7a-6e7c-475d-bc9c-db74ede656d4",
+            "connectionId": "mysql-f70a8ef0-dst",
+            "tableName": "books_mariadb_copy",
+            "bucketName": null,
+            "containerName": null,
+            "schemaName": null,
+            "objectName": null,
+            "sourceJobType": null,
+            "customQuery": null,
+            "path": null,
+            "delimiter": null,
+            "headerlessFile": "N",
+            "headers": [],
+            "dataWriteMode": "append"
+          }
+        }
+      ],
+      "joinMetadata": [
+        {
+          "joinMetadataTaskId": "704778bb-4fd8-49f8-beed-609f5cf0b34f",
+          "sourceMetadataId": "srcmeta-5b8eaf6a-e5c9-4593-9486-c3d1862b9fa5",
+          "destinationMetadataId": "dstmeta-20074a7a-6e7c-475d-bc9c-db74ede656d4",
+          "sourceColumnName": "ALL",
+          "destinationColumnName": "ALL",
+          "teamID": null,
+          "tagID": null,
+          "sourceGroupId": "67cc1103-16f9-4773-9356-11973569797d",
+          "destinationTaskId": "20074a7a-6e7c-475d-bc9c-db74ede656d4",
+          "sourceTaskId": "ab3ff4bc-78db-4e55-91ad-c8b96ed6d969",
+          "transformations": {
+            "ids": [],
+            "parent": null
+          }
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "5b8eaf6a-e5c9-4593-9486-c3d1862b9fa5": []
+  },
+  "taskSequence": {
+    "ab3ff4bc-78db-4e55-91ad-c8b96ed6d969": [
+      "20074a7a-6e7c-475d-bc9c-db74ede656d4"
+    ]
+  }
+}

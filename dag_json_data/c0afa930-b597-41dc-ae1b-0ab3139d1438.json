@@ -1,0 +1,137 @@
+{
+    "pipelineId": "BigqueryTest_1",
+    "scheduleInterval": "Monthly",
+    "startDate": "12/09/2025",
+    "catchup": false,
+    "jobs": [
+        {
+            "id": "ebc746bc-ab06-48b6-909c-16b4fcb4c882",
+            "source": {
+                "sourceName": "BQT",
+                "sourceType": "BIGQUERY",
+                "sourceProperties": {
+                    "taskId": "dc0552f3-fcd5-4cf2-9721-11026628a491",
+                    "connectionId": "3523b806-f825-4209-afb2-03837df9f038",
+                    "tableName": "firstBQTable",
+                    "bucketName": "",
+                    "containerName": "",
+                    "schemaName": "firstBQ",
+                    "objectName": "",
+                    "customQuery": "",
+                    "path": null,
+                    "delimiter": null,
+                    "sourceJobType": null,
+                    "dataWriteMode": null,
+                    "headerlessFile": "yes",
+                    "headers": [
+                        "Location",
+                        "Age",
+                        "LegalName",
+                        "ID"
+                    ]
+                }
+            },
+            "destinations": [
+                {
+                    "destinationName": "InfodatMySQL",
+                    "destinationType": "MYSQL",
+                    "destinationProperties": {
+                        "taskId": "212f086c-79df-4e15-99fb-5a4d75fe340d",
+                        "connectionId": "36259283-560e-4de2-8cc3-0d5b3a934891",
+                        "tableName": "bqTable",
+                        "bucketName": "",
+                        "containerName": "",
+                        "schemaName": "ryanTest",
+                        "objectName": "",
+                        "customQuery": null,
+                        "path": null,
+                        "delimiter": null,
+                        "sourceJobType": null,
+                        "dataWriteMode": "overwrite",
+                        "headerlessFile": "no",
+                        "headers": [
+                            "Location",
+                            "Age",
+                            "LegalName",
+                            "ID"
+                        ]
+                    }
+                }
+            ],
+            "joinMetadata": [
+                {
+                    "joinMetadataTaskId": "d463fe05-9be6-43f3-8b24-2555589b76d0",
+                    "sourceMetadataId": "81ffb301-8ffc-463c-9112-31e7eee608b7",
+                    "destinationMetadataId": "9d52e8a5-baa2-4bfd-8b4b-820c2e829eb2",
+                    "sourceColumnName": "Location",
+                    "destinationColumnName": "Location",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "66eb335f-e960-4311-b0a5-f45e59ca08f5",
+                    "destinationTaskId": "212f086c-79df-4e15-99fb-5a4d75fe340d",
+                    "sourceTaskId": "dc0552f3-fcd5-4cf2-9721-11026628a491",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "9d52e8a5-baa2-4bfd-8b4b-820c2e829eb2"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "ce09cd5f-3881-4c9d-99ee-e730299c8154",
+                    "sourceMetadataId": "68c2a55a-ade6-4018-9646-350a0872f707",
+                    "destinationMetadataId": "215453d8-c273-4cd1-b24f-3ae385fe9de8",
+                    "sourceColumnName": "Age",
+                    "destinationColumnName": "Age",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "66eb335f-e960-4311-b0a5-f45e59ca08f5",
+                    "destinationTaskId": "212f086c-79df-4e15-99fb-5a4d75fe340d",
+                    "sourceTaskId": "dc0552f3-fcd5-4cf2-9721-11026628a491",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "215453d8-c273-4cd1-b24f-3ae385fe9de8"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "5e354e11-d4a1-47d8-ae8d-b2f5a3325b09",
+                    "sourceMetadataId": "2d10cf5a-ee67-4758-abfc-def8dd9be506",
+                    "destinationMetadataId": "2cb6e7c8-8e1e-471e-aba7-5ba6107d7baa",
+                    "sourceColumnName": "LegalName",
+                    "destinationColumnName": "LegalName",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "66eb335f-e960-4311-b0a5-f45e59ca08f5",
+                    "destinationTaskId": "212f086c-79df-4e15-99fb-5a4d75fe340d",
+                    "sourceTaskId": "dc0552f3-fcd5-4cf2-9721-11026628a491",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "2cb6e7c8-8e1e-471e-aba7-5ba6107d7baa"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "9685d269-2a03-41d4-98dd-9246fef439a4",
+                    "sourceMetadataId": "ffc4c82f-082b-4dae-a9be-08b8692065f1",
+                    "destinationMetadataId": "5ee9c4e0-1a11-4933-a9e8-6165077434ee",
+                    "sourceColumnName": "ID",
+                    "destinationColumnName": "ID",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "66eb335f-e960-4311-b0a5-f45e59ca08f5",
+                    "destinationTaskId": "212f086c-79df-4e15-99fb-5a4d75fe340d",
+                    "sourceTaskId": "dc0552f3-fcd5-4cf2-9721-11026628a491",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "5ee9c4e0-1a11-4933-a9e8-6165077434ee"
+                    }
+                }
+            ]
+        }
+    ],
+    "sequence": {
+        "ebc746bc-ab06-48b6-909c-16b4fcb4c882": []
+    },
+    "taskSequence": {
+        "dc0552f3-fcd5-4cf2-9721-11026628a491": [
+            "212f086c-79df-4e15-99fb-5a4d75fe340d"
+        ]
+    }
+}

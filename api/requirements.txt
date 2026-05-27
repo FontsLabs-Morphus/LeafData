@@ -1,0 +1,5 @@
+flask==3.0.3
+docker==7.1.0
+requests==2.31.0
+avro
+avro-python3

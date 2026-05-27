@@ -1,0 +1,162 @@
+{
+  "pipelineId": "newColTest2",
+  "scheduleInterval": "@once",
+  "startDate": "01/30/2026",
+  "catchup": false,
+  "jobs": [
+    {
+      "id": "0e66a6d4-5bf9-4a5d-8848-05435dd6e976",
+      "source": {
+        "sourceName": "Azure4",
+        "sourceType": "AZUREBLOB",
+        "sourceProperties": {
+          "taskId": "9bf36aaa-75dc-4db7-9d35-8d85435fa7d6",
+          "connectionId": "infodatAz",
+          "tableName": "",
+          "bucketName": "",
+          "containerName": "filetransfer",
+          "schemaName": "",
+          "objectName": "New Folder/SimpleFIle.csv",
+          "customQuery": "",
+          "path": null,
+          "delimiter": null,
+          "sourceJobType": null,
+          "dataWriteMode": null,
+          "headerlessFile": "no",
+          "headers": [
+            "ID",
+            "FirstName",
+            "LastName",
+            "Age"
+          ]
+        }
+      },
+      "destinations": [
+        {
+          "destinationName": "InfoDat MySQL 2",
+          "destinationType": "PSQL",
+          "destinationProperties": {
+            "taskId": "ae843274-7238-4b2f-b866-889c26d9b29d",
+            "connectionId": "ryanSupaBase",
+            "tableName": "simplefile",
+            "bucketName": "",
+            "containerName": "",
+            "schemaName": "public",
+            "objectName": "",
+            "customQuery": null,
+            "path": null,
+            "delimiter": null,
+            "sourceJobType": null,
+            "dataWriteMode": "overwrite",
+            "headerlessFile": "no",
+            "headers": [
+              "ID",
+              "FirstName",
+              "LastName",
+              "Age"
+            ]
+          }
+        }
+      ],
+      "joinMetadata": [
+        {
+          "joinMetadataTaskId": "bcaee164-dc13-4574-a9e2-6b1dafaca8c9",
+          "sourceMetadataId": "9625eefa-1882-49f8-924c-916938253e28",
+          "destinationMetadataId": "70e23d06-8ee4-463e-9eb2-a1e384ddaca0",
+          "sourceColumnName": "ID",
+          "destinationColumnName": "ID",
+          "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+          "tagID": null,
+          "sourceGroupId": "43ab9322-5a8f-4627-a9f2-d12c5e33ff95",
+          "destinationTaskId": "ae843274-7238-4b2f-b866-889c26d9b29d",
+          "sourceTaskId": "9bf36aaa-75dc-4db7-9d35-8d85435fa7d6",
+          "transformations": {
+            "ids": [],
+            "expression": null,
+            "parent": "70e23d06-8ee4-463e-9eb2-a1e384ddaca0"
+          }
+        },
+        {
+          "joinMetadataTaskId": "7bf359a2-3f65-4415-a087-9aece58845dd",
+          "sourceMetadataId": "6b93638e-a747-47e0-b0d0-3d1467ce4f4c",
+          "destinationMetadataId": "c83ceb18-eb4b-4e55-8076-550163118ca5",
+          "sourceColumnName": "FirstName",
+          "destinationColumnName": "FirstName",
+          "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+          "tagID": null,
+          "sourceGroupId": "43ab9322-5a8f-4627-a9f2-d12c5e33ff95",
+          "destinationTaskId": "ae843274-7238-4b2f-b866-889c26d9b29d",
+          "sourceTaskId": "9bf36aaa-75dc-4db7-9d35-8d85435fa7d6",
+          "transformations": {
+            "ids": [],
+            "expression": null,
+            "parent": "c83ceb18-eb4b-4e55-8076-550163118ca5"
+          }
+        },
+        {
+          "joinMetadataTaskId": "3578d857-9c06-4619-a80e-8ac07a0a6a8f",
+          "sourceMetadataId": "c1b7aa32-8a54-4277-b54e-6abfc908bba9",
+          "destinationMetadataId": "f2023c5a-f4cb-4951-acb7-f918ec559431",
+          "sourceColumnName": "LastName",
+          "destinationColumnName": "LastName",
+          "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+          "tagID": null,
+          "sourceGroupId": "43ab9322-5a8f-4627-a9f2-d12c5e33ff95",
+          "destinationTaskId": "ae843274-7238-4b2f-b866-889c26d9b29d",
+          "sourceTaskId": "9bf36aaa-75dc-4db7-9d35-8d85435fa7d6",
+          "transformations": {
+            "ids": [],
+            "expression": null,
+            "parent": "f2023c5a-f4cb-4951-acb7-f918ec559431"
+          }
+        },
+        {
+          "joinMetadataTaskId": "e4521742-e577-44dd-b757-851186bd1bb3",
+          "sourceMetadataId": "af687ed3-6fbc-4ff3-92d3-b9d602a488bd",
+          "destinationMetadataId": "35b4fc46-1f04-4b07-9b58-65b319de3acc",
+          "sourceColumnName": "__EXPR__",
+          "destinationColumnName": "Age",
+          "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+          "tagID": null,
+          "sourceGroupId": "43ab9322-5a8f-4627-a9f2-d12c5e33ff95",
+          "destinationTaskId": "ae843274-7238-4b2f-b866-889c26d9b29d",
+          "sourceTaskId": "9bf36aaa-75dc-4db7-9d35-8d85435fa7d6",
+          "transformations": {
+            "ids": [
+              "EXPR"
+            ],
+            "expression": "literal(2020)",
+            "parent": "35b4fc46-1f04-4b07-9b58-65b319de3acc"
+          }
+        },
+        {
+          "joinMetadataTaskId": "29e6a4a1-a817-4090-9b42-5f26d565f939",
+          "sourceMetadataId": "92cb52a3-25cd-4b60-a72b-68efc400d70e",
+          "destinationMetadataId": "92cb52a3-25cd-4b60-a72b-68efc400d70e",
+          "sourceColumnName": "__EXPR__",
+          "destinationColumnName": "FullName",
+          "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+          "tagID": null,
+          "sourceGroupId": "43ab9322-5a8f-4627-a9f2-d12c5e33ff95",
+          "destinationTaskId": "ae843274-7238-4b2f-b866-889c26d9b29d",
+          "sourceTaskId": "9bf36aaa-75dc-4db7-9d35-8d85435fa7d6",
+          "transformations": {
+            "ids": [
+              "EXPR"
+            ],
+            "expression": "concat(FirstName,' ',LastName)",
+            "parent": "92cb52a3-25cd-4b60-a72b-68efc400d70e"
+          }
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "0e66a6d4-5bf9-4a5d-8848-05435dd6e976": []
+  },
+  "taskSequence": {
+    "9bf36aaa-75dc-4db7-9d35-8d85435fa7d6": [
+      "ae843274-7238-4b2f-b866-889c26d9b29d"
+    ]
+  }
+}

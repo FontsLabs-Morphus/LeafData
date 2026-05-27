@@ -1,0 +1,7 @@
+{
+    "pipelineId": "e5e269be-c023-46da-9121-aaf4ab056355_DAG",
+    "runId": "15d82c8e-36f2-4569-8981-867b3f33360c",
+    "scheduleInterval": "@once",
+    "startDate": "03/09/2026",
+    "catchup": false
+}

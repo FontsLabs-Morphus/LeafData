@@ -1,0 +1,1523 @@
+{
+    "pipelineId": "Ryan_dag",
+    "scheduleInterval": "Monthly",
+    "startDate": "12/15/2025",
+    "catchup": false,
+    "jobs": [
+        {
+            "id": "9fd527db-1f0a-4c9f-987a-39e8df8f2ab9",
+            "source": {
+                "sourceName": "Azuretest",
+                "sourceType": "AZUREBLOB",
+                "sourceProperties": {
+                    "taskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "connectionId": "237c9971-3d8f-44b1-98bc-cbaf70ac7c06",
+                    "tableName": "",
+                    "bucketName": "",
+                    "containerName": "dentaldemo",
+                    "schemaName": "",
+                    "objectName": "Medicare_Physician_Other_Practitioners_by_Provider_2023.csv",
+                    "customQuery": "",
+                    "path": null,
+                    "delimiter": null,
+                    "sourceJobType": null,
+                    "dataWriteMode": null,
+                    "headerlessFile": "no",
+                    "headers": [
+                        "Rndrng_NPI",
+                        "Rndrng_Prvdr_Last_Org_Name",
+                        "Rndrng_Prvdr_First_Name",
+                        "Rndrng_Prvdr_MI",
+                        "Rndrng_Prvdr_Crdntls",
+                        "Rndrng_Prvdr_Ent_Cd",
+                        "Rndrng_Prvdr_St1",
+                        "Rndrng_Prvdr_St2",
+                        "Rndrng_Prvdr_City",
+                        "Rndrng_Prvdr_State_Abrvtn",
+                        "Rndrng_Prvdr_State_FIPS",
+                        "Rndrng_Prvdr_Zip5",
+                        "Rndrng_Prvdr_RUCA",
+                        "Rndrng_Prvdr_RUCA_Desc",
+                        "Rndrng_Prvdr_Cntry",
+                        "Rndrng_Prvdr_Type",
+                        "Rndrng_Prvdr_Mdcr_Prtcptg_Ind",
+                        "Tot_HCPCS_Cds",
+                        "Tot_Benes",
+                        "Tot_Srvcs",
+                        "Tot_Sbmtd_Chrg",
+                        "Tot_Mdcr_Alowd_Amt",
+                        "Tot_Mdcr_Pymt_Amt",
+                        "Tot_Mdcr_Stdzd_Amt",
+                        "Drug_Sprsn_Ind",
+                        "Drug_Tot_HCPCS_Cds",
+                        "Drug_Tot_Benes",
+                        "Drug_Tot_Srvcs",
+                        "Drug_Sbmtd_Chrg",
+                        "Drug_Mdcr_Alowd_Amt",
+                        "Drug_Mdcr_Pymt_Amt",
+                        "Drug_Mdcr_Stdzd_Amt",
+                        "Med_Sprsn_Ind",
+                        "Med_Tot_HCPCS_Cds",
+                        "Med_Tot_Benes",
+                        "Med_Tot_Srvcs",
+                        "Med_Sbmtd_Chrg",
+                        "Med_Mdcr_Alowd_Amt",
+                        "Med_Mdcr_Pymt_Amt",
+                        "Med_Mdcr_Stdzd_Amt",
+                        "Bene_Avg_Age",
+                        "Bene_Age_LT_65_Cnt",
+                        "Bene_Age_65_74_Cnt",
+                        "Bene_Age_75_84_Cnt",
+                        "Bene_Age_GT_84_Cnt",
+                        "Bene_Feml_Cnt",
+                        "Bene_Male_Cnt",
+                        "Bene_Race_Wht_Cnt",
+                        "Bene_Race_Black_Cnt",
+                        "Bene_Race_API_Cnt",
+                        "Bene_Race_Hspnc_Cnt",
+                        "Bene_Race_NatInd_Cnt",
+                        "Bene_Race_Othr_Cnt",
+                        "Bene_Dual_Cnt",
+                        "Bene_Ndual_Cnt",
+                        "Bene_CC_BH_ADHD_OthCD_V1_Pct",
+                        "Bene_CC_BH_Alcohol_Drug_V1_Pct",
+                        "Bene_CC_BH_Tobacco_V1_Pct",
+                        "Bene_CC_BH_Alz_NonAlzdem_V2_Pct",
+                        "Bene_CC_BH_Anxiety_V1_Pct",
+                        "Bene_CC_BH_Bipolar_V1_Pct",
+                        "Bene_CC_BH_Mood_V2_Pct",
+                        "Bene_CC_BH_Depress_V1_Pct",
+                        "Bene_CC_BH_PD_V1_Pct",
+                        "Bene_CC_BH_PTSD_V1_Pct",
+                        "Bene_CC_BH_Schizo_OthPsy_V1_Pct",
+                        "Bene_CC_PH_Asthma_V2_Pct",
+                        "Bene_CC_PH_Afib_V2_Pct",
+                        "Bene_CC_PH_Cancer6_V2_Pct",
+                        "Bene_CC_PH_CKD_V2_Pct",
+                        "Bene_CC_PH_COPD_V2_Pct",
+                        "Bene_CC_PH_Diabetes_V2_Pct",
+                        "Bene_CC_PH_HF_NonIHD_V2_Pct",
+                        "Bene_CC_PH_Hyperlipidemia_V2_Pct",
+                        "Bene_CC_PH_Hypertension_V2_Pct",
+                        "Bene_CC_PH_IschemicHeart_V2_Pct",
+                        "Bene_CC_PH_Osteoporosis_V2_Pct",
+                        "Bene_CC_PH_Parkinson_V2_Pct",
+                        "Bene_CC_PH_Arthritis_V2_Pct",
+                        "Bene_CC_PH_Stroke_TIA_V2_Pct",
+                        "Bene_Avg_Risk_Scre"
+                    ]
+                }
+            },
+            "destinations": [
+                {
+                    "destinationName": "fkjgfgfkjlgfkjlgfklnkjl",
+                    "destinationType": "BIGQUERY",
+                    "destinationProperties": {
+                        "taskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                        "connectionId": "bc1f83df-291e-4c65-ab9d-d2153b4fc144",
+                        "tableName": "MedicareDataAz",
+                        "bucketName": "",
+                        "containerName": "",
+                        "schemaName": "DentalDemo",
+                        "objectName": "",
+                        "customQuery": null,
+                        "path": null,
+                        "delimiter": null,
+                        "sourceJobType": null,
+                        "dataWriteMode": "overwrite",
+                        "headerlessFile": "no",
+                        "headers": [
+                            "Rndrng_NPI",
+                            "Rndrng_Prvdr_Last_Org_Name",
+                            "Rndrng_Prvdr_First_Name",
+                            "Rndrng_Prvdr_MI",
+                            "Rndrng_Prvdr_Crdntls",
+                            "Rndrng_Prvdr_Ent_Cd",
+                            "Rndrng_Prvdr_St1",
+                            "Rndrng_Prvdr_St2",
+                            "Rndrng_Prvdr_City",
+                            "Rndrng_Prvdr_State_Abrvtn",
+                            "Rndrng_Prvdr_State_FIPS",
+                            "Rndrng_Prvdr_Zip5",
+                            "Rndrng_Prvdr_RUCA",
+                            "Rndrng_Prvdr_RUCA_Desc",
+                            "Rndrng_Prvdr_Cntry",
+                            "Rndrng_Prvdr_Type",
+                            "Rndrng_Prvdr_Mdcr_Prtcptg_Ind",
+                            "Tot_HCPCS_Cds",
+                            "Tot_Benes",
+                            "Tot_Srvcs",
+                            "Tot_Sbmtd_Chrg",
+                            "Tot_Mdcr_Alowd_Amt",
+                            "Tot_Mdcr_Pymt_Amt",
+                            "Tot_Mdcr_Stdzd_Amt",
+                            "Drug_Sprsn_Ind",
+                            "Drug_Tot_HCPCS_Cds",
+                            "Drug_Tot_Benes",
+                            "Drug_Tot_Srvcs",
+                            "Drug_Sbmtd_Chrg",
+                            "Drug_Mdcr_Alowd_Amt",
+                            "Drug_Mdcr_Pymt_Amt",
+                            "Drug_Mdcr_Stdzd_Amt",
+                            "Med_Sprsn_Ind",
+                            "Med_Tot_HCPCS_Cds",
+                            "Med_Tot_Benes",
+                            "Med_Tot_Srvcs",
+                            "Med_Sbmtd_Chrg",
+                            "Med_Mdcr_Alowd_Amt",
+                            "Med_Mdcr_Pymt_Amt",
+                            "Med_Mdcr_Stdzd_Amt",
+                            "Bene_Avg_Age",
+                            "Bene_Age_LT_65_Cnt",
+                            "Bene_Age_65_74_Cnt",
+                            "Bene_Age_75_84_Cnt",
+                            "Bene_Age_GT_84_Cnt",
+                            "Bene_Feml_Cnt",
+                            "Bene_Male_Cnt",
+                            "Bene_Race_Wht_Cnt",
+                            "Bene_Race_Black_Cnt",
+                            "Bene_Race_API_Cnt",
+                            "Bene_Race_Hspnc_Cnt",
+                            "Bene_Race_NatInd_Cnt",
+                            "Bene_Race_Othr_Cnt",
+                            "Bene_Dual_Cnt",
+                            "Bene_Ndual_Cnt",
+                            "Bene_CC_BH_ADHD_OthCD_V1_Pct",
+                            "Bene_CC_BH_Alcohol_Drug_V1_Pct",
+                            "Bene_CC_BH_Tobacco_V1_Pct",
+                            "Bene_CC_BH_Alz_NonAlzdem_V2_Pct",
+                            "Bene_CC_BH_Anxiety_V1_Pct",
+                            "Bene_CC_BH_Bipolar_V1_Pct",
+                            "Bene_CC_BH_Mood_V2_Pct",
+                            "Bene_CC_BH_Depress_V1_Pct",
+                            "Bene_CC_BH_PD_V1_Pct",
+                            "Bene_CC_BH_PTSD_V1_Pct",
+                            "Bene_CC_BH_Schizo_OthPsy_V1_Pct",
+                            "Bene_CC_PH_Asthma_V2_Pct",
+                            "Bene_CC_PH_Afib_V2_Pct",
+                            "Bene_CC_PH_Cancer6_V2_Pct",
+                            "Bene_CC_PH_CKD_V2_Pct",
+                            "Bene_CC_PH_COPD_V2_Pct",
+                            "Bene_CC_PH_Diabetes_V2_Pct",
+                            "Bene_CC_PH_HF_NonIHD_V2_Pct",
+                            "Bene_CC_PH_Hyperlipidemia_V2_Pct",
+                            "Bene_CC_PH_Hypertension_V2_Pct",
+                            "Bene_CC_PH_IschemicHeart_V2_Pct",
+                            "Bene_CC_PH_Osteoporosis_V2_Pct",
+                            "Bene_CC_PH_Parkinson_V2_Pct",
+                            "Bene_CC_PH_Arthritis_V2_Pct",
+                            "Bene_CC_PH_Stroke_TIA_V2_Pct",
+                            "Bene_Avg_Risk_Scre"
+                        ]
+                    }
+                }
+            ],
+            "joinMetadata": [
+                {
+                    "joinMetadataTaskId": "13904413-dafb-4d92-9a19-23336cb706d9",
+                    "sourceMetadataId": "1d4e1889-051f-4cd1-91da-8e254008523f",
+                    "destinationMetadataId": "a0348e4d-dc83-4360-81e2-e371b5abe208",
+                    "sourceColumnName": "Rndrng_NPI",
+                    "destinationColumnName": "Rndrng_NPI",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "a0348e4d-dc83-4360-81e2-e371b5abe208"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "26da0ce5-5e56-46ed-8e7b-fa7bb9ac4929",
+                    "sourceMetadataId": "1eb00769-73e7-472d-bee3-7a3949f7b8f9",
+                    "destinationMetadataId": "95a50e38-e820-42ed-b396-23142403bf4a",
+                    "sourceColumnName": "Rndrng_Prvdr_Last_Org_Name",
+                    "destinationColumnName": "Rndrng_Prvdr_Last_Org_Name",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "95a50e38-e820-42ed-b396-23142403bf4a"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "65fd7161-0b13-495c-a3eb-33be7116123e",
+                    "sourceMetadataId": "ad07a796-3d90-4b46-9f26-da6ee5fedded",
+                    "destinationMetadataId": "bfc9fbdd-8f81-4be3-9d6a-0ce8db2b025b",
+                    "sourceColumnName": "Rndrng_Prvdr_First_Name",
+                    "destinationColumnName": "Rndrng_Prvdr_First_Name",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "bfc9fbdd-8f81-4be3-9d6a-0ce8db2b025b"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "5d829fd2-5475-4c35-9126-b43230ac417e",
+                    "sourceMetadataId": "d1990abb-841a-41d2-8dd4-07bf8b0c7ebb",
+                    "destinationMetadataId": "6d588ab1-e552-428a-9156-7e49fcedf6dc",
+                    "sourceColumnName": "Rndrng_Prvdr_MI",
+                    "destinationColumnName": "Rndrng_Prvdr_MI",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "6d588ab1-e552-428a-9156-7e49fcedf6dc"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "3a36a3b1-9055-4fc9-b0d9-92b244a21e58",
+                    "sourceMetadataId": "98b7c615-4312-42e4-a11f-dc1796ff53c1",
+                    "destinationMetadataId": "d4884d22-6283-40c0-baae-b7f6501e2ce3",
+                    "sourceColumnName": "Rndrng_Prvdr_Crdntls",
+                    "destinationColumnName": "Rndrng_Prvdr_Crdntls",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "d4884d22-6283-40c0-baae-b7f6501e2ce3"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "f4804d2d-6b51-4770-aba6-012cf256c95d",
+                    "sourceMetadataId": "a8138f1b-0117-457f-bc8d-3035c64fce10",
+                    "destinationMetadataId": "286a98a6-734a-4d05-8145-dd2020a4c2d9",
+                    "sourceColumnName": "Rndrng_Prvdr_Ent_Cd",
+                    "destinationColumnName": "Rndrng_Prvdr_Ent_Cd",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "286a98a6-734a-4d05-8145-dd2020a4c2d9"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "867474a2-39f5-42dd-ad84-5d0a9f028ea0",
+                    "sourceMetadataId": "89bf530d-67f4-4083-8b4f-67bd194079a5",
+                    "destinationMetadataId": "fd9b2a6f-e497-4b42-ba49-8bd1628f8699",
+                    "sourceColumnName": "Rndrng_Prvdr_St1",
+                    "destinationColumnName": "Rndrng_Prvdr_St1",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "fd9b2a6f-e497-4b42-ba49-8bd1628f8699"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "94729667-8499-4400-9dd4-3b79540d7115",
+                    "sourceMetadataId": "cc79b300-8564-49d7-9b06-056d84b8c888",
+                    "destinationMetadataId": "5b0af7e2-690f-4436-8ff1-c172bfd97db9",
+                    "sourceColumnName": "Rndrng_Prvdr_St2",
+                    "destinationColumnName": "Rndrng_Prvdr_St2",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "5b0af7e2-690f-4436-8ff1-c172bfd97db9"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "3a19e47e-8ca8-4b96-925e-08db6685e072",
+                    "sourceMetadataId": "ea5b1340-0f66-483f-bbf8-5731227cc261",
+                    "destinationMetadataId": "794b6958-8771-4a7c-9624-86616b372ffb",
+                    "sourceColumnName": "Rndrng_Prvdr_City",
+                    "destinationColumnName": "Rndrng_Prvdr_City",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "794b6958-8771-4a7c-9624-86616b372ffb"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "e4b0bb33-f7db-4e5c-b53d-cdc81ef1d4c9",
+                    "sourceMetadataId": "c5b2b11f-97bf-4407-b2d6-9fca175c62b6",
+                    "destinationMetadataId": "82efffd9-6a11-40cc-89e0-79a09b23077f",
+                    "sourceColumnName": "Rndrng_Prvdr_State_Abrvtn",
+                    "destinationColumnName": "Rndrng_Prvdr_State_Abrvtn",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "82efffd9-6a11-40cc-89e0-79a09b23077f"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "7721a4bb-866c-4225-894d-3fa6b55fbeef",
+                    "sourceMetadataId": "01710d77-322b-4787-b03d-df1fe8f536da",
+                    "destinationMetadataId": "9c8d9bce-02a7-4459-a1c2-aadb0859c50f",
+                    "sourceColumnName": "Rndrng_Prvdr_State_FIPS",
+                    "destinationColumnName": "Rndrng_Prvdr_State_FIPS",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "9c8d9bce-02a7-4459-a1c2-aadb0859c50f"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "49a71f2e-b7dd-4009-b664-178ddc511dbf",
+                    "sourceMetadataId": "553b003e-1087-4aa7-9002-21fcae117b47",
+                    "destinationMetadataId": "485dd122-f28e-4325-8fb4-1992f8e940fd",
+                    "sourceColumnName": "Rndrng_Prvdr_Zip5",
+                    "destinationColumnName": "Rndrng_Prvdr_Zip5",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "485dd122-f28e-4325-8fb4-1992f8e940fd"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "98ed7460-a163-44a7-8b54-67aaa7cee33d",
+                    "sourceMetadataId": "ed863918-a03b-4354-99db-2ff447bb271a",
+                    "destinationMetadataId": "9189ad18-413a-411c-b097-b3e7363ef79e",
+                    "sourceColumnName": "Rndrng_Prvdr_RUCA",
+                    "destinationColumnName": "Rndrng_Prvdr_RUCA",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "9189ad18-413a-411c-b097-b3e7363ef79e"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "ba249f18-faf2-4c6b-a52f-c4c4c06befbb",
+                    "sourceMetadataId": "94862f83-d734-478c-a102-1406fbb4b2e0",
+                    "destinationMetadataId": "43b45f15-51e4-4324-8996-d003e9337ef2",
+                    "sourceColumnName": "Rndrng_Prvdr_RUCA_Desc",
+                    "destinationColumnName": "Rndrng_Prvdr_RUCA_Desc",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "43b45f15-51e4-4324-8996-d003e9337ef2"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "eab40116-f9e7-43e6-a6ca-245f6bf7c95b",
+                    "sourceMetadataId": "89e7cdfb-c123-466c-8f46-1c8cd0ebb027",
+                    "destinationMetadataId": "3c8f90a3-4d59-4975-99da-241988d3782f",
+                    "sourceColumnName": "Rndrng_Prvdr_Cntry",
+                    "destinationColumnName": "Rndrng_Prvdr_Cntry",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "3c8f90a3-4d59-4975-99da-241988d3782f"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "75b3e948-1311-4977-92e0-e1725c2b1e26",
+                    "sourceMetadataId": "440ef1df-61cc-4e82-943f-68324e155e44",
+                    "destinationMetadataId": "fe99d1a4-43fd-4741-bc23-a3cc98494c4c",
+                    "sourceColumnName": "Rndrng_Prvdr_Type",
+                    "destinationColumnName": "Rndrng_Prvdr_Type",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "fe99d1a4-43fd-4741-bc23-a3cc98494c4c"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "242ed28d-1282-4bbc-9f65-474034f3b96c",
+                    "sourceMetadataId": "f46f7e73-011a-4e43-8b40-41564eb0e689",
+                    "destinationMetadataId": "27698bb8-ac2c-4252-8cdc-828f1d4b0e07",
+                    "sourceColumnName": "Rndrng_Prvdr_Mdcr_Prtcptg_Ind",
+                    "destinationColumnName": "Rndrng_Prvdr_Mdcr_Prtcptg_Ind",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "27698bb8-ac2c-4252-8cdc-828f1d4b0e07"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "fc5dfc8c-dc95-4e33-98f7-9538aece2d76",
+                    "sourceMetadataId": "6ad83194-50b0-4b30-8e92-309ec55b2c01",
+                    "destinationMetadataId": "d9dc003a-7147-4679-8829-9277b69d86e4",
+                    "sourceColumnName": "Tot_HCPCS_Cds",
+                    "destinationColumnName": "Tot_HCPCS_Cds",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "d9dc003a-7147-4679-8829-9277b69d86e4"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "1224e371-cbec-4f36-92e3-aa6bd1e2bc5a",
+                    "sourceMetadataId": "67fe70ed-416b-40b5-8f37-b217e68d6610",
+                    "destinationMetadataId": "e226b9eb-26a4-4289-9293-3a041791aee6",
+                    "sourceColumnName": "Tot_Benes",
+                    "destinationColumnName": "Tot_Benes",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "e226b9eb-26a4-4289-9293-3a041791aee6"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "a58f8a65-41e1-4b13-a426-4df3bfa7480f",
+                    "sourceMetadataId": "6662b449-7f11-4aba-82e4-f4859cdc559a",
+                    "destinationMetadataId": "01ac096d-6c09-4190-acc7-25b350b304b1",
+                    "sourceColumnName": "Tot_Srvcs",
+                    "destinationColumnName": "Tot_Srvcs",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "01ac096d-6c09-4190-acc7-25b350b304b1"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "8f157934-26d7-4e31-b5ce-c6a925f84612",
+                    "sourceMetadataId": "78f7ecc8-255a-4fc6-a1fb-f7d82878f06c",
+                    "destinationMetadataId": "c153ea4d-2526-4522-9fe6-0901c77645a2",
+                    "sourceColumnName": "Tot_Sbmtd_Chrg",
+                    "destinationColumnName": "Tot_Sbmtd_Chrg",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "c153ea4d-2526-4522-9fe6-0901c77645a2"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "fe9b51c9-603e-456d-94cf-9c9953c9f07c",
+                    "sourceMetadataId": "0945ac41-91aa-4555-b01d-82d926147a26",
+                    "destinationMetadataId": "7acbd41c-1e01-4866-af0c-681e0a611f97",
+                    "sourceColumnName": "Tot_Mdcr_Alowd_Amt",
+                    "destinationColumnName": "Tot_Mdcr_Alowd_Amt",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "7acbd41c-1e01-4866-af0c-681e0a611f97"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "3fb43902-3f11-486b-a6c6-ac00f9869872",
+                    "sourceMetadataId": "68582823-598e-4e4d-9cb4-32a476f33f13",
+                    "destinationMetadataId": "c0459470-eb29-4f49-9fda-dc33af6fc200",
+                    "sourceColumnName": "Tot_Mdcr_Pymt_Amt",
+                    "destinationColumnName": "Tot_Mdcr_Pymt_Amt",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "c0459470-eb29-4f49-9fda-dc33af6fc200"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "2ddc2d5a-4493-4d00-b6cb-ed3e827eeec1",
+                    "sourceMetadataId": "f05f5e27-2992-441a-84e7-a34b57aa3c93",
+                    "destinationMetadataId": "9954e8ad-8067-4212-862c-730b498c3992",
+                    "sourceColumnName": "Tot_Mdcr_Stdzd_Amt",
+                    "destinationColumnName": "Tot_Mdcr_Stdzd_Amt",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "9954e8ad-8067-4212-862c-730b498c3992"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "d62c7903-f3b0-4104-8095-e3cc40e8a0f1",
+                    "sourceMetadataId": "3637e878-cfc3-4384-b393-46c6b0b11bd1",
+                    "destinationMetadataId": "7402c71e-6036-4440-a39a-63785e7c2bc9",
+                    "sourceColumnName": "Drug_Sprsn_Ind",
+                    "destinationColumnName": "Drug_Sprsn_Ind",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "7402c71e-6036-4440-a39a-63785e7c2bc9"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "a4e65e1f-7f23-4898-9533-df118370651d",
+                    "sourceMetadataId": "55797189-59fe-4dd3-bf14-41eacee6685b",
+                    "destinationMetadataId": "c4e5efec-d1fc-47bf-a977-c64f09c8cc74",
+                    "sourceColumnName": "Drug_Tot_HCPCS_Cds",
+                    "destinationColumnName": "Drug_Tot_HCPCS_Cds",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "c4e5efec-d1fc-47bf-a977-c64f09c8cc74"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "b8edcfc3-02e6-4164-ad26-30fc3fa513af",
+                    "sourceMetadataId": "1af7626e-5043-447d-bb25-34fdfdd57f1f",
+                    "destinationMetadataId": "22909910-2312-4e2c-9312-c16dc280e64e",
+                    "sourceColumnName": "Drug_Tot_Benes",
+                    "destinationColumnName": "Drug_Tot_Benes",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "22909910-2312-4e2c-9312-c16dc280e64e"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "d203a4af-5a62-4e1c-8eb5-f89b67e8d7db",
+                    "sourceMetadataId": "4231cc27-4ae1-4e32-af91-e4357d10178d",
+                    "destinationMetadataId": "39cbb2ba-9912-4597-af20-543072c8cb10",
+                    "sourceColumnName": "Drug_Tot_Srvcs",
+                    "destinationColumnName": "Drug_Tot_Srvcs",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "39cbb2ba-9912-4597-af20-543072c8cb10"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "d8af6bac-b0c3-4c09-beb3-dcd68259f01b",
+                    "sourceMetadataId": "b4339312-06e7-4265-823c-5a3420d907a8",
+                    "destinationMetadataId": "182b8b4f-8b2d-4efe-aa85-7313c1d06c12",
+                    "sourceColumnName": "Drug_Sbmtd_Chrg",
+                    "destinationColumnName": "Drug_Sbmtd_Chrg",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "182b8b4f-8b2d-4efe-aa85-7313c1d06c12"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "3bf14e38-4556-4e42-baaa-cbe526979984",
+                    "sourceMetadataId": "f9015094-ce31-48f6-ab86-0e5721706f49",
+                    "destinationMetadataId": "3fca4dc5-dc46-4e69-a50e-2592fe689b27",
+                    "sourceColumnName": "Drug_Mdcr_Alowd_Amt",
+                    "destinationColumnName": "Drug_Mdcr_Alowd_Amt",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "3fca4dc5-dc46-4e69-a50e-2592fe689b27"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "9056c8a7-cea9-425b-9d3a-49beaf2846eb",
+                    "sourceMetadataId": "acea2b78-98c2-423d-b1b3-1fb3408d477f",
+                    "destinationMetadataId": "5da0ceb4-f972-4585-aedb-d7668c86c8ba",
+                    "sourceColumnName": "Drug_Mdcr_Pymt_Amt",
+                    "destinationColumnName": "Drug_Mdcr_Pymt_Amt",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "5da0ceb4-f972-4585-aedb-d7668c86c8ba"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "6c300321-2de7-4cfe-9e3a-e80aa538600d",
+                    "sourceMetadataId": "39fda5cb-54c8-48e4-a3b6-d0649d57f656",
+                    "destinationMetadataId": "41901582-581d-447e-a7bf-7b06f4076549",
+                    "sourceColumnName": "Drug_Mdcr_Stdzd_Amt",
+                    "destinationColumnName": "Drug_Mdcr_Stdzd_Amt",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "41901582-581d-447e-a7bf-7b06f4076549"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "eefe2240-f876-4dec-b41d-602fb85600ec",
+                    "sourceMetadataId": "f0c70222-1858-48e3-8e1e-adec7937f385",
+                    "destinationMetadataId": "f54d1b17-02e8-4ccf-82b1-994e186e3c19",
+                    "sourceColumnName": "Med_Sprsn_Ind",
+                    "destinationColumnName": "Med_Sprsn_Ind",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "f54d1b17-02e8-4ccf-82b1-994e186e3c19"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "a28d63c8-3486-485a-8645-69fd162b2417",
+                    "sourceMetadataId": "431c0126-cf7d-4a4c-8044-b66031046b66",
+                    "destinationMetadataId": "cf73e043-7733-401b-bae8-bff39bd814c0",
+                    "sourceColumnName": "Med_Tot_HCPCS_Cds",
+                    "destinationColumnName": "Med_Tot_HCPCS_Cds",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "cf73e043-7733-401b-bae8-bff39bd814c0"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "eea1cf8f-8774-4be9-bbca-ae3c29ec1bf5",
+                    "sourceMetadataId": "3785c3b5-f9ed-4041-839f-f4325ac3a3b7",
+                    "destinationMetadataId": "2a0acf71-0fe1-4264-ac1e-f0c4efef0e72",
+                    "sourceColumnName": "Med_Tot_Benes",
+                    "destinationColumnName": "Med_Tot_Benes",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "2a0acf71-0fe1-4264-ac1e-f0c4efef0e72"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "fa95487b-d109-42b3-bb57-19a3ad7cea3b",
+                    "sourceMetadataId": "30c15b6f-8523-43dc-a377-1ea3152690d9",
+                    "destinationMetadataId": "83a2ee41-6b3b-46b5-887d-4228e97b965c",
+                    "sourceColumnName": "Med_Tot_Srvcs",
+                    "destinationColumnName": "Med_Tot_Srvcs",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "83a2ee41-6b3b-46b5-887d-4228e97b965c"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "1ca5b03e-d17a-4740-81da-f30d5bd95b4b",
+                    "sourceMetadataId": "777abc9f-d330-4dc4-b2ea-52706112af6c",
+                    "destinationMetadataId": "5efba72d-6c18-454c-ae76-c5d2ef82a2ab",
+                    "sourceColumnName": "Med_Sbmtd_Chrg",
+                    "destinationColumnName": "Med_Sbmtd_Chrg",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "5efba72d-6c18-454c-ae76-c5d2ef82a2ab"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "37531c46-4c4d-453e-983b-9c65f9ea0b2b",
+                    "sourceMetadataId": "3abd7b9e-8472-4436-adb7-82c2a595b82a",
+                    "destinationMetadataId": "0629777e-01e0-441b-b58b-8b8a0a1873ef",
+                    "sourceColumnName": "Med_Mdcr_Alowd_Amt",
+                    "destinationColumnName": "Med_Mdcr_Alowd_Amt",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "0629777e-01e0-441b-b58b-8b8a0a1873ef"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "6514cd20-7920-4784-a5d7-e813e4fac29e",
+                    "sourceMetadataId": "075da063-a889-4387-b3aa-4d300ebbc3a2",
+                    "destinationMetadataId": "b9fadf10-eb8d-4d5b-a405-b134ab5d6cd4",
+                    "sourceColumnName": "Med_Mdcr_Pymt_Amt",
+                    "destinationColumnName": "Med_Mdcr_Pymt_Amt",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "b9fadf10-eb8d-4d5b-a405-b134ab5d6cd4"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "fd7f2830-712f-42e6-a12a-234cf14d3f7a",
+                    "sourceMetadataId": "da803db8-fea2-403d-bbe0-856c7810cc99",
+                    "destinationMetadataId": "d9d9bebe-2cc0-4b05-9816-7cf08fbadebb",
+                    "sourceColumnName": "Med_Mdcr_Stdzd_Amt",
+                    "destinationColumnName": "Med_Mdcr_Stdzd_Amt",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "d9d9bebe-2cc0-4b05-9816-7cf08fbadebb"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "445abbf8-75cc-474c-bc6d-ab68436fa864",
+                    "sourceMetadataId": "11ee657b-be02-4ad6-847d-85af3878616b",
+                    "destinationMetadataId": "737ce71a-b46c-49e6-ba5a-bebfe3824536",
+                    "sourceColumnName": "Bene_Avg_Age",
+                    "destinationColumnName": "Bene_Avg_Age",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "737ce71a-b46c-49e6-ba5a-bebfe3824536"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "609e65b3-8973-49f6-b521-37a1625446c6",
+                    "sourceMetadataId": "9735b523-fcbd-4637-8517-9012561f7c66",
+                    "destinationMetadataId": "44cff40a-4fb6-45f9-b5e4-4799dc3f0a86",
+                    "sourceColumnName": "Bene_Age_LT_65_Cnt",
+                    "destinationColumnName": "Bene_Age_LT_65_Cnt",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "44cff40a-4fb6-45f9-b5e4-4799dc3f0a86"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "84e7abb6-3156-4040-90a7-b688c8ebc9db",
+                    "sourceMetadataId": "6b854db9-6157-4281-97dc-85e6b2cf6ece",
+                    "destinationMetadataId": "b4ef833d-ab56-4885-8b3b-53225dff577b",
+                    "sourceColumnName": "Bene_Age_65_74_Cnt",
+                    "destinationColumnName": "Bene_Age_65_74_Cnt",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "b4ef833d-ab56-4885-8b3b-53225dff577b"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "51748a6f-2766-4330-834f-dc7e4e1ec8db",
+                    "sourceMetadataId": "28124857-9006-4735-805d-29216dcc4cbc",
+                    "destinationMetadataId": "aa2315a4-dee3-4d90-a42e-24f12a7f0da1",
+                    "sourceColumnName": "Bene_Age_75_84_Cnt",
+                    "destinationColumnName": "Bene_Age_75_84_Cnt",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "aa2315a4-dee3-4d90-a42e-24f12a7f0da1"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "2cd4f010-4529-4404-af63-aa69d7ca0f7f",
+                    "sourceMetadataId": "3821f94e-8e64-4902-b07c-8af1079000b6",
+                    "destinationMetadataId": "e502f738-ea92-4028-a363-5576152d996a",
+                    "sourceColumnName": "Bene_Age_GT_84_Cnt",
+                    "destinationColumnName": "Bene_Age_GT_84_Cnt",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "e502f738-ea92-4028-a363-5576152d996a"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "2cf21590-b48a-44e2-b8f8-1adc3090acb7",
+                    "sourceMetadataId": "3696b544-8223-40c0-9379-747e08dab510",
+                    "destinationMetadataId": "5155c957-4fd8-4d38-ac09-2f134af4cd2f",
+                    "sourceColumnName": "Bene_Feml_Cnt",
+                    "destinationColumnName": "Bene_Feml_Cnt",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "5155c957-4fd8-4d38-ac09-2f134af4cd2f"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "cfc00e6b-5eee-4714-877f-64c16e6afa62",
+                    "sourceMetadataId": "041b1170-635f-4ce2-b00f-a4275d902e0c",
+                    "destinationMetadataId": "0067b6f9-4db9-444d-93b8-231136b5dd4a",
+                    "sourceColumnName": "Bene_Male_Cnt",
+                    "destinationColumnName": "Bene_Male_Cnt",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "0067b6f9-4db9-444d-93b8-231136b5dd4a"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "08da316c-9fc2-4483-9085-d212cb6badc3",
+                    "sourceMetadataId": "28dd0ebc-1f9b-4cca-a91e-85c30eebffc1",
+                    "destinationMetadataId": "afcf677b-a9e5-4cc9-8b0a-1ad9b4867937",
+                    "sourceColumnName": "Bene_Race_Wht_Cnt",
+                    "destinationColumnName": "Bene_Race_Wht_Cnt",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "afcf677b-a9e5-4cc9-8b0a-1ad9b4867937"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "a37a715e-1bb5-4ad7-8a27-3718ee6ee469",
+                    "sourceMetadataId": "a55a898a-7e9d-4f72-a277-9ae448fce9b1",
+                    "destinationMetadataId": "c1ade9c6-bade-4140-8a65-81148ce47248",
+                    "sourceColumnName": "Bene_Race_Black_Cnt",
+                    "destinationColumnName": "Bene_Race_Black_Cnt",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "c1ade9c6-bade-4140-8a65-81148ce47248"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "ac3814d4-f863-4b1d-9741-4fa9d44d3212",
+                    "sourceMetadataId": "cf5ebbd5-28f0-496d-a183-cc46d3f7aac9",
+                    "destinationMetadataId": "7c5f4f3b-72d9-4ce2-a904-6101ab172e4f",
+                    "sourceColumnName": "Bene_Race_API_Cnt",
+                    "destinationColumnName": "Bene_Race_API_Cnt",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "7c5f4f3b-72d9-4ce2-a904-6101ab172e4f"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "ef6a6583-3be9-4985-a764-3151202c6f92",
+                    "sourceMetadataId": "346db5a4-ab1b-4b96-9279-34402e44ba3a",
+                    "destinationMetadataId": "8873d0e0-a637-4383-ad8d-7f306662e3a8",
+                    "sourceColumnName": "Bene_Race_Hspnc_Cnt",
+                    "destinationColumnName": "Bene_Race_Hspnc_Cnt",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "8873d0e0-a637-4383-ad8d-7f306662e3a8"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "7c28daa4-caab-4fe7-b0d7-fd3796b748e1",
+                    "sourceMetadataId": "08eebf2f-6daf-49dc-a07f-a625bdc4f7b2",
+                    "destinationMetadataId": "1ebf87b2-36b9-445d-ad54-3edf7f23a4c6",
+                    "sourceColumnName": "Bene_Race_NatInd_Cnt",
+                    "destinationColumnName": "Bene_Race_NatInd_Cnt",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "1ebf87b2-36b9-445d-ad54-3edf7f23a4c6"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "3ba7c5dc-fb38-492a-9e3b-bacdd0aaa1a6",
+                    "sourceMetadataId": "56816def-4ce3-4ca2-99cb-975c5077c949",
+                    "destinationMetadataId": "faf95c16-a992-4d21-8dbe-d48252aefe3f",
+                    "sourceColumnName": "Bene_Race_Othr_Cnt",
+                    "destinationColumnName": "Bene_Race_Othr_Cnt",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "faf95c16-a992-4d21-8dbe-d48252aefe3f"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "5b3cd3f8-4cf8-4455-999b-2a2f51285d04",
+                    "sourceMetadataId": "b6cb2364-8fcc-4059-be63-0a9cfa9a1de0",
+                    "destinationMetadataId": "2ccdf33c-4b02-46a1-97c5-bd7e786ea787",
+                    "sourceColumnName": "Bene_Dual_Cnt",
+                    "destinationColumnName": "Bene_Dual_Cnt",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "2ccdf33c-4b02-46a1-97c5-bd7e786ea787"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "78310185-0e7a-4dc1-bcc1-8cbef8166fff",
+                    "sourceMetadataId": "fe77744c-9fa7-4162-acfb-a444481567df",
+                    "destinationMetadataId": "e5105b95-f18e-435d-b6b5-70e690402975",
+                    "sourceColumnName": "Bene_Ndual_Cnt",
+                    "destinationColumnName": "Bene_Ndual_Cnt",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "e5105b95-f18e-435d-b6b5-70e690402975"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "c417d630-d6be-4145-bb7f-dada37fddc40",
+                    "sourceMetadataId": "13d13114-e420-4b36-9ba4-51bf39be3521",
+                    "destinationMetadataId": "c128afda-b0e5-4277-a4c8-339441e7c64b",
+                    "sourceColumnName": "Bene_CC_BH_ADHD_OthCD_V1_Pct",
+                    "destinationColumnName": "Bene_CC_BH_ADHD_OthCD_V1_Pct",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "c128afda-b0e5-4277-a4c8-339441e7c64b"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "940d2fde-4e41-461a-bd86-d4c1f26e4e39",
+                    "sourceMetadataId": "4cda5eba-0013-4fe2-bfca-deabb7376315",
+                    "destinationMetadataId": "fc47e303-37d4-45d0-b503-4819bb30c766",
+                    "sourceColumnName": "Bene_CC_BH_Alcohol_Drug_V1_Pct",
+                    "destinationColumnName": "Bene_CC_BH_Alcohol_Drug_V1_Pct",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "fc47e303-37d4-45d0-b503-4819bb30c766"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "e8bb37e9-1f36-4e75-be64-6c276c2ac7e7",
+                    "sourceMetadataId": "a6614ccb-8eb2-46bf-848c-6fa0aa117b95",
+                    "destinationMetadataId": "aa38eb41-c80b-4cff-b6af-29b12e794289",
+                    "sourceColumnName": "Bene_CC_BH_Tobacco_V1_Pct",
+                    "destinationColumnName": "Bene_CC_BH_Tobacco_V1_Pct",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "aa38eb41-c80b-4cff-b6af-29b12e794289"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "25b688e3-943a-45cb-8f35-653edcf33b2b",
+                    "sourceMetadataId": "56915575-44e8-4396-8474-5961ed9557b9",
+                    "destinationMetadataId": "0e8cd6d8-8f81-4b6b-8b95-d10ecab50990",
+                    "sourceColumnName": "Bene_CC_BH_Alz_NonAlzdem_V2_Pct",
+                    "destinationColumnName": "Bene_CC_BH_Alz_NonAlzdem_V2_Pct",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "0e8cd6d8-8f81-4b6b-8b95-d10ecab50990"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "3d16df0f-cc97-448e-974b-4ad60dcf0fc9",
+                    "sourceMetadataId": "2e045cb3-5b62-49d3-bb9e-5599b9b0b949",
+                    "destinationMetadataId": "3370c75c-a689-4602-97be-fdcfc74e096d",
+                    "sourceColumnName": "Bene_CC_BH_Anxiety_V1_Pct",
+                    "destinationColumnName": "Bene_CC_BH_Anxiety_V1_Pct",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "3370c75c-a689-4602-97be-fdcfc74e096d"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "b7ebbebe-5c38-4909-be47-857f4af0cf0b",
+                    "sourceMetadataId": "e2ebca1f-d8fd-4904-9a7e-71476727f184",
+                    "destinationMetadataId": "b5537fe1-fdc0-47a6-a66f-f9a7b581e1ea",
+                    "sourceColumnName": "Bene_CC_BH_Bipolar_V1_Pct",
+                    "destinationColumnName": "Bene_CC_BH_Bipolar_V1_Pct",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "b5537fe1-fdc0-47a6-a66f-f9a7b581e1ea"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "b4bdc1de-8e11-4488-9896-6dcc4e3a90d1",
+                    "sourceMetadataId": "00608c75-1403-42e0-a434-1fef61ed2c4b",
+                    "destinationMetadataId": "d1cc1954-6ef6-402f-be4c-32239c40e13c",
+                    "sourceColumnName": "Bene_CC_BH_Mood_V2_Pct",
+                    "destinationColumnName": "Bene_CC_BH_Mood_V2_Pct",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "d1cc1954-6ef6-402f-be4c-32239c40e13c"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "cb1e59c8-3a85-4873-b5a4-f826f14d0f15",
+                    "sourceMetadataId": "ede6d886-aac1-4026-b428-34fa84734719",
+                    "destinationMetadataId": "d9fdae14-d1b0-4887-bded-39b78aa811b8",
+                    "sourceColumnName": "Bene_CC_BH_Depress_V1_Pct",
+                    "destinationColumnName": "Bene_CC_BH_Depress_V1_Pct",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "d9fdae14-d1b0-4887-bded-39b78aa811b8"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "36b8c63a-ca82-4808-bfb1-afbe9cd26d3b",
+                    "sourceMetadataId": "803dbbe9-7f90-44fe-be2e-abd1e0e371fd",
+                    "destinationMetadataId": "a150956e-3f42-406e-85a8-5e4eff5d9bd2",
+                    "sourceColumnName": "Bene_CC_BH_PD_V1_Pct",
+                    "destinationColumnName": "Bene_CC_BH_PD_V1_Pct",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "a150956e-3f42-406e-85a8-5e4eff5d9bd2"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "36430a4f-1148-494c-8ebd-5e06a3653aa4",
+                    "sourceMetadataId": "e601aac0-d509-4e0b-9442-77117955b208",
+                    "destinationMetadataId": "1d636450-7935-46b0-8fa2-3dbf12ee1aca",
+                    "sourceColumnName": "Bene_CC_BH_PTSD_V1_Pct",
+                    "destinationColumnName": "Bene_CC_BH_PTSD_V1_Pct",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "1d636450-7935-46b0-8fa2-3dbf12ee1aca"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "ec8923ca-27f1-4e10-b2e2-6ba5de1b6c84",
+                    "sourceMetadataId": "73ff9dd2-2460-40c9-92aa-c8e501e713dc",
+                    "destinationMetadataId": "6806853e-3850-438f-aff7-ce360895fc25",
+                    "sourceColumnName": "Bene_CC_BH_Schizo_OthPsy_V1_Pct",
+                    "destinationColumnName": "Bene_CC_BH_Schizo_OthPsy_V1_Pct",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "6806853e-3850-438f-aff7-ce360895fc25"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "48cfa268-38ae-4f5a-8b2b-f9693c9fd714",
+                    "sourceMetadataId": "4df3c651-a86f-4ae5-8a59-c70f5eb9e64b",
+                    "destinationMetadataId": "6af9ab9e-ac64-4523-8b8f-8c0148ac5168",
+                    "sourceColumnName": "Bene_CC_PH_Asthma_V2_Pct",
+                    "destinationColumnName": "Bene_CC_PH_Asthma_V2_Pct",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "6af9ab9e-ac64-4523-8b8f-8c0148ac5168"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "a6efae01-83e0-4774-b6a5-f886e43b3977",
+                    "sourceMetadataId": "62069dcc-a3e9-4062-83b8-36d63a8cac1b",
+                    "destinationMetadataId": "c4764f23-418a-4bf2-b39b-6989079e45ef",
+                    "sourceColumnName": "Bene_CC_PH_Afib_V2_Pct",
+                    "destinationColumnName": "Bene_CC_PH_Afib_V2_Pct",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "c4764f23-418a-4bf2-b39b-6989079e45ef"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "11b7cd11-92ed-4556-8531-7004062f257a",
+                    "sourceMetadataId": "9e45aa09-6eac-4268-9e9e-78cb2b0eb583",
+                    "destinationMetadataId": "97090af3-dffa-4d6c-8a17-85460ce741b8",
+                    "sourceColumnName": "Bene_CC_PH_Cancer6_V2_Pct",
+                    "destinationColumnName": "Bene_CC_PH_Cancer6_V2_Pct",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "97090af3-dffa-4d6c-8a17-85460ce741b8"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "6485ecf9-8dd2-4e65-a468-8cb288973d75",
+                    "sourceMetadataId": "4249e93d-a2c3-4074-b38a-289ae9a7d06b",
+                    "destinationMetadataId": "92429382-8d05-4685-9611-7aa1ea1584f8",
+                    "sourceColumnName": "Bene_CC_PH_CKD_V2_Pct",
+                    "destinationColumnName": "Bene_CC_PH_CKD_V2_Pct",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "92429382-8d05-4685-9611-7aa1ea1584f8"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "21042cc3-4684-47e7-8576-6505e3ff442a",
+                    "sourceMetadataId": "162dc7e8-2e17-469c-ae88-844185451093",
+                    "destinationMetadataId": "baf0b5c2-f52e-48e9-9b8f-12bd0844c902",
+                    "sourceColumnName": "Bene_CC_PH_COPD_V2_Pct",
+                    "destinationColumnName": "Bene_CC_PH_COPD_V2_Pct",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "baf0b5c2-f52e-48e9-9b8f-12bd0844c902"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "aa0cce24-1af4-40e9-a8f0-e3a03ac52c45",
+                    "sourceMetadataId": "0cee28f9-ef5c-4753-af5d-7303aa9de6a9",
+                    "destinationMetadataId": "22622b83-20f6-4553-902e-6664a0b40ef6",
+                    "sourceColumnName": "Bene_CC_PH_Diabetes_V2_Pct",
+                    "destinationColumnName": "Bene_CC_PH_Diabetes_V2_Pct",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "22622b83-20f6-4553-902e-6664a0b40ef6"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "0d72c370-ddfb-4714-a99e-1fc59a000f86",
+                    "sourceMetadataId": "ff75d758-b671-41ea-846a-c8ed47975ff3",
+                    "destinationMetadataId": "cfbd6154-db37-4e12-914c-74076ae303a4",
+                    "sourceColumnName": "Bene_CC_PH_HF_NonIHD_V2_Pct",
+                    "destinationColumnName": "Bene_CC_PH_HF_NonIHD_V2_Pct",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "cfbd6154-db37-4e12-914c-74076ae303a4"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "18f7e862-2143-4f90-a5c7-08d9cf9fd7f5",
+                    "sourceMetadataId": "66d899f9-b5f4-46ca-a09f-cf4c226cbc09",
+                    "destinationMetadataId": "357560b1-41c3-4536-8b23-69dbde399a37",
+                    "sourceColumnName": "Bene_CC_PH_Hyperlipidemia_V2_Pct",
+                    "destinationColumnName": "Bene_CC_PH_Hyperlipidemia_V2_Pct",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "357560b1-41c3-4536-8b23-69dbde399a37"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "6f8da8da-7478-408d-8167-f0cfdf59ef50",
+                    "sourceMetadataId": "7fc356d7-3742-4474-a64e-0fd0a065a9dd",
+                    "destinationMetadataId": "6e73d5f4-1f50-4137-bd68-473ffd7c7afc",
+                    "sourceColumnName": "Bene_CC_PH_Hypertension_V2_Pct",
+                    "destinationColumnName": "Bene_CC_PH_Hypertension_V2_Pct",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "6e73d5f4-1f50-4137-bd68-473ffd7c7afc"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "cd2cbdc3-a951-4e7c-9b43-f0d27123087f",
+                    "sourceMetadataId": "03c32b0c-487e-4a26-a7f2-8fd060f1d8ef",
+                    "destinationMetadataId": "d4f49603-66bf-4c03-b36e-c9e67edd6018",
+                    "sourceColumnName": "Bene_CC_PH_IschemicHeart_V2_Pct",
+                    "destinationColumnName": "Bene_CC_PH_IschemicHeart_V2_Pct",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "d4f49603-66bf-4c03-b36e-c9e67edd6018"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "4fd158e9-58ba-4c48-8e9c-778ff3c109a4",
+                    "sourceMetadataId": "2d8684fc-c886-4a52-84c3-bf85dcda28f2",
+                    "destinationMetadataId": "95b4c93c-9a58-4fb0-b922-37d0d2b28eac",
+                    "sourceColumnName": "Bene_CC_PH_Osteoporosis_V2_Pct",
+                    "destinationColumnName": "Bene_CC_PH_Osteoporosis_V2_Pct",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "95b4c93c-9a58-4fb0-b922-37d0d2b28eac"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "75538989-63e3-48c9-a3c5-443d90d2dbc3",
+                    "sourceMetadataId": "719cfd7d-71ff-48c8-9b6e-221ddd088a8e",
+                    "destinationMetadataId": "7cb91c63-d464-4157-92a8-98673d6ac3c5",
+                    "sourceColumnName": "Bene_CC_PH_Parkinson_V2_Pct",
+                    "destinationColumnName": "Bene_CC_PH_Parkinson_V2_Pct",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "7cb91c63-d464-4157-92a8-98673d6ac3c5"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "06d83a6f-d10b-4657-9ff2-7a8dd3f40cf3",
+                    "sourceMetadataId": "d139bedf-bf8a-46aa-a902-8d4a57d66552",
+                    "destinationMetadataId": "56777424-5311-4618-bfd4-7bfcd44d6bd4",
+                    "sourceColumnName": "Bene_CC_PH_Arthritis_V2_Pct",
+                    "destinationColumnName": "Bene_CC_PH_Arthritis_V2_Pct",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "56777424-5311-4618-bfd4-7bfcd44d6bd4"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "0ba750cf-3562-4e6d-82f8-64ee23afdc1a",
+                    "sourceMetadataId": "16fa51be-d4fe-4864-89c1-a6a5ca912bba",
+                    "destinationMetadataId": "153c4731-146a-4107-9547-639ae2e9cd41",
+                    "sourceColumnName": "Bene_CC_PH_Stroke_TIA_V2_Pct",
+                    "destinationColumnName": "Bene_CC_PH_Stroke_TIA_V2_Pct",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "153c4731-146a-4107-9547-639ae2e9cd41"
+                    }
+                },
+                {
+                    "joinMetadataTaskId": "2379924a-d611-4e77-876a-f31f8c13fc91",
+                    "sourceMetadataId": "95b8cd94-d258-4168-b3eb-1b8cf8bfd038",
+                    "destinationMetadataId": "bf193c9a-1fc1-4f42-aecd-f0995c0d4346",
+                    "sourceColumnName": "Bene_Avg_Risk_Scre",
+                    "destinationColumnName": "Bene_Avg_Risk_Scre",
+                    "teamID": "33ca1aeb-f45f-43e2-b871-46d8afae5100",
+                    "tagID": null,
+                    "sourceGroupId": "efc53922-6a5d-43fb-8432-40d006d5c9a9",
+                    "destinationTaskId": "4b4c5405-8141-49b9-a825-25f6fbac4a76",
+                    "sourceTaskId": "2fd61dde-b166-48a6-9996-37f9b40f8dc3",
+                    "transformations": {
+                        "ids": [],
+                        "parent": "bf193c9a-1fc1-4f42-aecd-f0995c0d4346"
+                    }
+                }
+            ]
+        }
+    ],
+    "sequence": {
+        "9fd527db-1f0a-4c9f-987a-39e8df8f2ab9": []
+    },
+    "taskSequence": {
+        "2fd61dde-b166-48a6-9996-37f9b40f8dc3": [
+            "4b4c5405-8141-49b9-a825-25f6fbac4a76"
+        ]
+    }
+}
